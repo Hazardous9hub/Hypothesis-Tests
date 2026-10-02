@@ -1,0 +1,3620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>HypothesisTests &mdash; Interactive Statistical Mastery &amp; Revision Guide</title>
+
+  <!-- Primary SEO Meta Tags -->
+  <meta name="title" content="HypothesisTests — Interactive Statistical Mastery & Revision Guide">
+  <meta name="description" content="Master Hypothesis Testing, Central Limit Theorem, A/B Testing, ANOVA, Chi-Square, and Feature Engineering with zero-jargon interactive simulators and real business case studies.">
+  <meta name="keywords" content="Hypothesis Testing, Statistics, Central Limit Theorem, A/B Testing, ANOVA, Chi-Square, Kruskal-Wallis, Kolmogorov-Smirnov, Feature Engineering, Data Science, Scaler, Python, Data Analytics, Yulu, Walmart, Aerofit">
+  <meta name="author" content="DAV Fundamentals">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://hypothesistests.github.io/">
+
+  <!-- Mobile & PWA Theme Controls -->
+  <meta name="theme-color" content="#0D9488" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B1120" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="HypothesisTests">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Open Graph / Facebook / LinkedIn / Discord Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HypothesisTests">
+  <meta property="og:title" content="HypothesisTests &mdash; Interactive Statistical Mastery &amp; Revision Guide">
+  <meta property="og:description" content="Visual and interactive revision for Hypothesis Testing, Central Limit Theorem, A/B Testing, ANOVA, KS-Test, and Feature Engineering. Zero jargon, live sliders, and real business case studies.">
+  <meta property="og:url" content="https://hypothesistests.github.io/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%230B1120'/%3E%3Cpath d='M200 450 Q600 80 1000 450' stroke='%2314B8A6' stroke-width='10' fill='none'/%3E%3Ctext x='600' y='320' font-family='sans-serif' font-size='64' font-weight='bold' fill='%23F1F5F9' text-anchor='middle'%3EHypothesisTests%3C/text%3E%3Ctext x='600' y='380' font-family='monospace' font-size='28' fill='%2394A3B8' text-anchor='middle'%3EInteractive Statistical Mastery &amp; Case Studies%3C/text%3E%3C/svg%3E">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="HypothesisTests interactive statistical revision banner">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HypothesisTests &mdash; Interactive Statistical Mastery">
+  <meta name="twitter:description" content="Master hypothesis tests, CLT, ANOVA, and Feature Engineering through interactive sliders and real business case studies.">
+  <meta name="twitter:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%230B1120'/%3E%3Cpath d='M200 450 Q600 80 1000 450' stroke='%2314B8A6' stroke-width='10' fill='none'/%3E%3Ctext x='600' y='320' font-family='sans-serif' font-size='64' font-weight='bold' fill='%23F1F5F9' text-anchor='middle'%3EHypothesisTests%3C/text%3E%3Ctext x='600' y='380' font-family='monospace' font-size='28' fill='%2394A3B8' text-anchor='middle'%3EInteractive Statistical Mastery &amp; Case Studies%3C/text%3E%3C/svg%3E">
+
+  <!-- Security, Privacy & Performance Audit Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data:; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self';">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+  <!-- Self-Contained High-Res SVG Favicon (Zero 404 Requests) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230D9488'/%3E%3Cpath d='M7 21 C11 21 13 9 16 9 C19 9 21 21 25 21' stroke='white' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='9' r='2' fill='%23FBBF24'/%3E%3C/svg%3E">
+
+  <!-- Google Rich Snippets / Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "HypothesisTests",
+        "url": "https://hypothesistests.github.io/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Modern Browser with HTML5 Canvas.",
+        "description": "Zero-jargon interactive revision dashboard for Hypothesis Testing, CLT, A/B Testing, ANOVA, KS-Test, and Feature Engineering."
+      },
+      {
+        "@type": "LearningResource",
+        "name": "HypothesisTests &mdash; Interactive Statistical Mastery Revision Guide",
+        "educationalLevel": "Intermediate",
+        "learningResourceType": "Interactive Simulation",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "keywords": "Hypothesis Testing, Central Limit Theorem, A/B Testing, ANOVA, Chi-Square, Feature Engineering, Scaler",
+        "about": [
+          {"@type": "Thing", "name": "Hypothesis Testing"},
+          {"@type": "Thing", "name": "Central Limit Theorem"},
+          {"@type": "Thing", "name": "A/B Testing"},
+          {"@type": "Thing", "name": "ANOVA"},
+          {"@type": "Thing", "name": "Feature Engineering"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Accessibility Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 10px;
+      background: var(--accent);
+      color: var(--on-accent);
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      z-index: 100;
+      transition: top .15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 10px; outline: 2px solid var(--accent-border); }
+
+    .badge-privacy {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      background: var(--surface);
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+      padding: 3px 8px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .privacy-footer-banner {
+      margin-top: 24px;
+      padding: 12px 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* -------------------------------------------------------------
+       THEME & COLOR TOKENS (BAOYU CLEAN VISUAL PALETTE)
+    ------------------------------------------------------------- */
+    :root {
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --surface-elevated: #FFFFFF;
+      --ink: #0F172A;
+      --ink-dim: #334155;
+      --muted: #64748B;
+      --line: #E2E8F0;
+      --line-subtle: #F1F5F9;
+
+      /* Baoyu Specialized Semantic Tints */
+      --accent: #0D9488;          /* Teal: Decision pass / Truth */
+      --accent-soft: #F0FDFA;
+      --accent-border: #99F6E4;
+      --on-accent: #FFFFFF;
+
+      --hot: #E11D48;             /* Rose/Coral: Rejections / Type I / Outliers */
+      --hot-soft: #FFF1F2;
+      --hot-border: #FECDD3;
+
+      --blue: #2563EB;            /* Royal: Parametric / Z / Models */
+      --blue-soft: #EFF6FF;
+      --blue-border: #BFDBFE;
+
+      --gold: #D97706;            /* Amber: Type II / Warnings / Skew */
+      --gold-soft: #FFFBEB;
+      --gold-border: #FDE68A;
+
+      --purple: #7C3AED;          /* Violet: Diagnostics / Non-parametric */
+      --purple-soft: #F5F3FF;
+      --purple-border: #DDD6FE;
+
+      --code-bg: #0F172A;
+      --code-ink: #F8FAFC;
+
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0B1120;
+      --surface: #131C31;
+      --surface-elevated: #1A2642;
+      --ink: #F1F5F9;
+      --ink-dim: #CBD5E1;
+      --muted: #94A3B8;
+      --line: #22304E;
+      --line-subtle: #18233C;
+
+      --accent: #14B8A6;
+      --accent-soft: rgba(20, 184, 166, 0.15);
+      --accent-border: rgba(20, 184, 166, 0.35);
+
+      --hot: #FB7185;
+      --hot-soft: rgba(251, 113, 133, 0.15);
+      --hot-border: rgba(251, 113, 133, 0.35);
+
+      --blue: #60A5FA;
+      --blue-soft: rgba(96, 165, 250, 0.15);
+      --blue-border: rgba(96, 165, 250, 0.35);
+
+      --gold: #FBBF24;
+      --gold-soft: rgba(251, 191, 36, 0.15);
+      --gold-border: rgba(251, 191, 36, 0.35);
+
+      --purple: #A78BFA;
+      --purple-soft: rgba(167, 139, 250, 0.15);
+      --purple-border: rgba(167, 139, 250, 0.35);
+
+      --code-bg: #070B14;
+      --code-ink: #E2E8F0;
+    }
+
+    /* Base Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color .2s ease, color .2s ease;
+    }
+
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 20px 24px 80px;
+    }
+
+    /* Header */
+    header {
+      padding: 18px 0 20px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 16px;
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge-hub {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+    .header-desc {
+      color: var(--muted);
+      font-size: 14.5px;
+      margin-top: 4px;
+    }
+    .theme-toggle {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--ink-dim);
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: var(--shadow-sm);
+      transition: all .15s ease;
+    }
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Tab Navigation Strip */
+    .strip-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: var(--bg);
+      margin-left: -24px;
+      margin-right: -24px;
+      padding: 10px 24px;
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .strip {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .strip::-webkit-scrollbar { display: none; }
+    .tab {
+      flex: none;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-dim);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 14px;
+      cursor: pointer;
+      transition: all .15s ease;
+      white-space: nowrap;
+    }
+    .tab:hover {
+      border-color: var(--accent);
+      color: var(--ink);
+    }
+    .tab[aria-selected="true"] {
+      background: var(--accent);
+      color: var(--on-accent);
+      border-color: var(--accent);
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(13, 148, 136, 0.28);
+    }
+
+    /* Panels & General Typography */
+    .panel {
+      padding-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .panel[hidden] { display: none !important; }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    /* Core Recall Box */
+    .recall-box {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .recall-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .recall-text {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    /* Cards & Containers */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+    .card-title {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Interactive Playgrounds */
+    .playground {
+      background: var(--surface-elevated);
+      border: 1.5px solid var(--accent-border);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-md);
+    }
+    .playground-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 14px;
+      background: var(--bg);
+      padding: 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+    }
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .control-group label {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--ink-dim);
+      display: flex;
+      justify-content: space-between;
+    }
+    .control-group label strong {
+      font-family: var(--font-mono);
+      color: var(--accent);
+    }
+    input[type="range"] {
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .metric-box {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .metric-lbl {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+    .metric-val {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .verdict-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+    .verdict-badge.pass {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+    }
+    .verdict-badge.reject {
+      background: var(--hot-soft);
+      color: var(--hot);
+      border: 1px solid var(--hot-border);
+    }
+
+    /* Baoyu Bento Layout */
+    .bento-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .bento-header {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 640px) {
+      .bento-grid { grid-template-columns: 1fr; }
+    }
+    .bento-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .bento-card:hover {
+      transform: translateY(-1px);
+    }
+    .bento-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .bento-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    .bento-title {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .bento-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-left: 0;
+    }
+    .bento-list li {
+      font-size: 13.5px;
+      line-height: 1.45;
+      color: var(--ink-dim);
+      position: relative;
+      padding-left: 14px;
+    }
+    .bento-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+
+    /* Code & Formulas */
+    .code-block {
+      background: var(--code-bg);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--code-ink);
+      overflow-x: auto;
+      border: 1px solid var(--line-subtle);
+    }
+    .formula-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+    .formula-row:last-child { margin-bottom: 0; }
+    .formula-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .formula-math {
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      font-weight: 600;
+      background: var(--code-bg);
+      color: var(--code-ink);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      overflow-x: auto;
+      display: inline-block;
+      width: 100%;
+    }
+
+    /* Chips */
+    .chip {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+    }
+    .chip.hot { background: var(--hot-soft); color: var(--hot); border-color: var(--hot-border); }
+    .chip.blue { background: var(--blue-soft); color: var(--blue); border-color: var(--blue-border); }
+    .chip.gold { background: var(--gold-soft); color: var(--gold); border-color: var(--gold-border); }
+    .chip.purple { background: var(--purple-soft); color: var(--purple); border-color: var(--purple-border); }
+
+    /* Tables */
+    .table-wrap {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+      box-shadow: var(--shadow-sm);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    th, td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: var(--bg);
+    }
+    tr:last-child td { border-bottom: none; }
+
+    /* Wizard Card */
+    .wizard-card {
+      background: var(--surface);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .wizard-step {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .wizard-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .wizard-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .wiz-btn {
+      background: var(--bg);
+      border: 1.5px solid var(--line);
+      color: var(--ink-dim);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all .15s ease;
+    }
+    .wiz-btn:hover {
+      border-color: var(--accent);
+      color: var(--ink);
+    }
+    .wiz-btn.active {
+      background: var(--accent);
+      color: var(--on-accent);
+      border-color: var(--accent);
+    }
+    .wiz-result {
+      background: var(--accent-soft);
+      border: 1.5px dashed var(--accent-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    /* Footer Navigation */
+    .nav-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 36px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+    .nav-btn {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all .15s ease;
+    }
+    .nav-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .nav-btn:only-child { margin-left: auto; }
+
+    /* Case Study Sub-Tabs */
+    .case-nav {
+      display: flex;
+      gap: 8px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 8px;
+    }
+    .case-tab {
+      background: none;
+      border: none;
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      transition: all .15s ease;
+    }
+    .case-tab.active {
+      background: var(--accent);
+      color: var(--on-accent);
+    }
+    .case-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Editable Contingency Matrix */
+    .ct-grid {
+      display: grid;
+      grid-template-columns: 80px repeat(2, 1fr) 90px;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      align-items: center;
+      text-align: center;
+    }
+    .ct-head { font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase; }
+    .ct-input {
+      background: var(--surface);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 8px;
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      color: var(--ink);
+      width: 100%;
+    }
+    .ct-input:focus { border-color: var(--accent); outline: none; }
+    .ct-margin { background: var(--bg); padding: 8px; border-radius: var(--radius-sm); font-weight: 600; color: var(--muted); }
+
+    /* Problem Solving Arena Styles */
+    .arena-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+    }
+    .arena-card {
+      background: var(--surface);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: var(--shadow-sm);
+      transition: border-color .15s ease, transform .15s ease;
+    }
+    .arena-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .arena-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      width: fit-content;
+    }
+    .arena-scenario {
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+    .arena-question {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .arena-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    @media (max-width: 500px) {
+      .arena-options { grid-template-columns: 1fr; }
+    }
+    .arena-opt {
+      background: var(--surface-elevated);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 9px 12px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      text-align: left;
+      transition: all .15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .arena-opt:hover {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+    .arena-opt.correct {
+      background: var(--accent-soft) !important;
+      border-color: var(--accent) !important;
+      color: var(--accent) !important;
+      font-weight: 700;
+    }
+    .arena-opt.wrong {
+      background: var(--hot-soft) !important;
+      border-color: var(--hot) !important;
+      color: var(--hot) !important;
+    }
+    .arena-feedback {
+      display: none;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .arena-feedback.visible { display: block; }
+    .arena-feedback.pass {
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      color: var(--ink);
+    }
+    .arena-feedback.fail {
+      background: var(--hot-soft);
+      border-left: 3px solid var(--hot);
+      color: var(--ink);
+    }
+    .arena-code-btn {
+      background: none;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius-sm);
+      padding: 6px 10px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      text-align: center;
+      transition: all .15s ease;
+      margin-top: 4px;
+    }
+    .arena-code-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .arena-code-box {
+      display: none;
+      margin-top: 6px;
+    }
+    .arena-code-box.open { display: block; }
+  </style>
+</head>
+<body>
+<a href="#topicStrip" class="skip-link">Skip to Navigation</a>
+
+<div class="wrap">
+  <header>
+    <div class="header-top">
+      <div>
+        <h1>
+          <span>HypothesisTests</span>
+          <span class="badge-hub">DAV Fundamentals</span>
+          <span class="badge-privacy">&#128274; 100% Client-Side &bull; Safe &amp; Private</span>
+        </h1>
+        <p class="header-desc">Complete Interactive Revision Dashboard: Hypothesis Testing, CLT &amp; CI Overlaps, Colab Lectures, Case Studies (Yulu, Walmart, Aerofit), and Feature Engineering.</p>
+      </div>
+      <button class="theme-toggle" id="themeBtn" aria-label="Toggle Theme">
+        <span id="themeIcon">🌙</span> <span id="themeText">Dark</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="strip-wrapper">
+    <nav class="strip" id="topicStrip" aria-label="Modules Navigation"></nav>
+  </div>
+
+  <!-- ==================== 0. INTERACTIVE TEST SELECTOR ==================== -->
+  <section class="panel" id="p-wizard">
+    <h2>Which Statistical Test Do I Use?</h2>
+    <p class="subtitle">Interactive Decision Tree: Click your data attributes to get the exact test recommendation and intuition.</p>
+
+    <div class="recall-box">
+      <span class="recall-tag">Decision Rule</span>
+      <span class="recall-text">1. Check target type (Continuous vs Categorical vs Distribution Shape) &rarr; 2. Count independent vs paired groups &rarr; 3. Verify Normality / Sample Size (CLT).</span>
+    </div>
+
+    <div class="wizard-card">
+      <div class="wizard-step">
+        <span class="wizard-label">Step 1: What is the nature of your variable / comparison?</span>
+        <div class="wizard-options" id="wiz-var">
+          <button class="wiz-btn active" data-v="num">Continuous / Numeric Means</button>
+          <button class="wiz-btn" data-v="cat">Categorical Counts / Proportions</button>
+          <button class="wiz-btn" data-v="dist">Full Distribution Shape / Spread (Not Just Mean)</button>
+          <button class="wiz-btn" data-v="rel">Relationship / Correlation Between Two Columns</button>
+        </div>
+      </div>
+
+      <div class="wizard-step" id="wiz-step2">
+        <span class="wizard-label">Step 2: How many groups or samples?</span>
+        <div class="wizard-options" id="wiz-groups">
+          <button class="wiz-btn active" data-g="1">1 Sample vs Baseline Constant</button>
+          <button class="wiz-btn" data-g="2ind">2 Independent Groups (A vs B)</button>
+          <button class="wiz-btn" data-g="2pair">2 Dependent / Paired Samples (Before vs After)</button>
+          <button class="wiz-btn" data-g="3plus">3 or More Groups</button>
+        </div>
+      </div>
+
+      <div class="wizard-step" id="wiz-step3">
+        <span class="wizard-label">Step 3: Sample Size &amp; Normality Assumption</span>
+        <div class="wizard-options" id="wiz-norm">
+          <button class="wiz-btn active" data-n="norm">Normal Distribution or n &ge; 30 (CLT)</button>
+          <button class="wiz-btn" data-n="skew">Heavy Skew / Small Sample / Ordinal Data</button>
+        </div>
+      </div>
+
+      <div class="wiz-result" id="wiz-output"></div>
+    </div>
+
+    <!-- Master Comparative Table -->
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Comparison Scenario</th>
+            <th>Parametric Standard</th>
+            <th>Non-Parametric Alternative</th>
+            <th>Primary Test Metric</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1 Group vs Hypothesized Mean</strong></td>
+            <td>1-Sample Z-Test (&sigma; known) / 1-Sample T-Test</td>
+            <td>Wilcoxon Signed-Rank Test</td>
+            <td>Sample Mean vs &mu;&#8320;</td>
+          </tr>
+          <tr>
+            <td><strong>2 Independent Cohorts (A vs B)</strong></td>
+            <td>2-Sample Welch T-Test (A/B Test)</td>
+            <td>Mann-Whitney U Test (Rank-Sum)</td>
+            <td>Mean Difference (&xbar;&#8321; - &xbar;&#8322;)</td>
+          </tr>
+          <tr>
+            <td><strong>2 Proportions (Conversion Rates)</strong></td>
+            <td>2-Sample Z Proportion Test</td>
+            <td>Fisher's Exact Test (if small sample)</td>
+            <td>Proportion Difference (p&#770;&#8321; - p&#770;&#8322;)</td>
+          </tr>
+          <tr>
+            <td><strong>2 Dependent / Matched Pairs</strong></td>
+            <td>Paired Student T-Test</td>
+            <td>Wilcoxon Signed-Rank Test</td>
+            <td>Mean of Differences (d&#772;)</td>
+          </tr>
+          <tr>
+            <td><strong>3+ Independent Groups</strong></td>
+            <td>One-Way ANOVA (F-Test)</td>
+            <td>Kruskal-Wallis H Test</td>
+            <td>Between-Group Variance / Within-Group Variance</td>
+          </tr>
+          <tr>
+            <td><strong>3+ Dependent / Repeated Folds</strong></td>
+            <td>Repeated Measures ANOVA</td>
+            <td>Friedman Test</td>
+            <td>Treatment Variation across Folds / Blocks</td>
+          </tr>
+          <tr>
+            <td><strong>Full Distribution Shape &amp; Spread</strong></td>
+            <td>Two-Sample Kolmogorov-Smirnov (KS-Test)</td>
+            <td>KS-Test is Non-Parametric</td>
+            <td>Max CDF Distance D = sup |F&#8321;(x) - F&#8322;(x)|</td>
+          </tr>
+          <tr>
+            <td><strong>Categorical Contingency (2 Categoricals)</strong></td>
+            <td>Chi-Square (&chi;&sup2;) Test of Independence</td>
+            <td>Fisher's Exact Test (if Cochran condition fails)</td>
+            <td>&sum; (Observed - Expected)&sup2; / Expected</td>
+          </tr>
+          <tr>
+            <td><strong>Linear / Monotonic Co-Movement</strong></td>
+            <td>Pearson Correlation Coefficient (r)</td>
+            <td>Spearman Rank Correlation (&rho;)</td>
+            <td>Covariance / (SD_x &middot; SD_y)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ==================== CASE STUDIES HUB ==================== -->
+  <section class="panel" id="p-cases" hidden>
+    <h2>Scaler Business Case Studies &amp; Real Datasets</h2>
+    <p class="subtitle">Direct blueprint for your project submissions: Yulu E-Bikes, Walmart Spend, and Aerofit Treadmills.</p>
+
+    <div class="case-nav">
+      <button class="case-tab active" id="btn-case-yulu">1. Yulu Bike Sharing</button>
+      <button class="case-tab" id="btn-case-walmart">2. Walmart Spend &amp; CLT</button>
+      <button class="case-tab" id="btn-case-aerofit">3. Aerofit Treadmills</button>
+    </div>
+
+    <!-- Yulu Content -->
+    <div class="case-card" id="case-content-yulu">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+        <h3 style="font-size:18px;color:var(--accent);">Yulu Business Case Study: Hypothesis Testing</h3>
+        <span class="chip gold">Dataset: bike_sharing.csv (10,886 rows)</span>
+      </div>
+      <p style="font-size:13.5px;color:var(--ink-dim);">
+        <strong>Problem Context:</strong> Yulu experienced an unexpected revenue dip. Management needs to identify the core factors driving electric cycle demand in India.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Research Question</th>
+              <th>Statistical Test</th>
+              <th>Hypotheses</th>
+              <th>Outcome &amp; Business Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Does cycle demand differ between working and non-working days?</td>
+              <td>2-Sample Welch T-Test</td>
+              <td>H&#8320;: &mu;_working = &mu;_nonworking<br>H&#8321;: &mu;_working &ne; &mu;_nonworking</td>
+              <td><strong>Fail to Reject H&#8320; (p &approx; 0.226)</strong>. Overall volume is identical (~190/hr), but casual riders peak on weekends and registered commuters dominate weekdays!</td>
+            </tr>
+            <tr>
+              <td>Does cycle demand vary significantly across seasons?</td>
+              <td>One-Way ANOVA + Tukey HSD</td>
+              <td>H&#8320;: &mu;_spring = &mu;_summer = &mu;_fall = &mu;_winter</td>
+              <td><strong>Reject H&#8320; (p &lt; 10&#8315;&#185;&#8304;&#8304;)</strong>. Spring demand (~116) collapses compared to Fall (~234). Deploy spring marketing campaigns.</td>
+            </tr>
+            <tr>
+              <td>Does cycle demand differ across weather types?</td>
+              <td>One-Way ANOVA + Kruskal-Wallis</td>
+              <td>H&#8320;: All weather mean counts are equal</td>
+              <td><strong>Reject H&#8320; (p &lt; 10&#8315;&#8308;&#8304;)</strong>. Bad weather halves volume (~118 vs ~205). Schedule vehicle maintenance on predictable rainy days.</td>
+            </tr>
+            <tr>
+              <td>Are season and weather conditions independent?</td>
+              <td>Chi-Square (&chi;&sup2;) Test of Independence</td>
+              <td>H&#8320;: Weather is independent of Season</td>
+              <td><strong>Reject H&#8320; (p &lt; 10&#8315;&#8310;)</strong>. Dependent! <span class="chip hot">Trap</span>: Weather=4 has only 1 row (breaks Cochran's rule); must combine Weather 3 &amp; 4.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="code-block"><pre><code># Yulu Python Implementation Snippet
+from scipy import stats
+from statsmodels.stats.multicomp import pairwise_tukeyhsd
+
+# 1. Working Day T-Test
+stats.ttest_ind(df[df['workingday']==1]['count'], df[df['workingday']==0]['count'], equal_var=False)
+
+# 2. Season ANOVA & Tukey HSD
+s1, s2, s3, s4 = [df[df['season']==i]['count'] for i in [1, 2, 3, 4]]
+stats.f_oneway(s1, s2, s3, s4)
+pairwise_tukeyhsd(df['count'], df['season'])</code></pre></div>
+    </div>
+
+    <!-- Walmart Content -->
+    <div class="case-card" id="case-content-walmart" style="display:none;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+        <h3 style="font-size:18px;color:var(--blue);">Walmart Case Study: Customer Spend &amp; CLT</h3>
+        <span class="chip blue">Dataset: walmart.csv (550,000 rows)</span>
+      </div>
+      <p style="font-size:13.5px;color:var(--ink-dim);">
+        <strong>Problem Context:</strong> Analyze Black Friday transaction spending to understand whether male vs. female purchase behavior differs and construct population confidence intervals.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Research Question</th>
+              <th>Statistical Methodology</th>
+              <th>Key Nuance / Gotcha</th>
+              <th>Business Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Do men spend more per transaction than women?</td>
+              <td>2-Sample T-Test / Z-Test</td>
+              <td>Men spend slightly more on average ($9,437 vs $8,734). With n=550K, p-value is &lt; 0.0001, but Cohen's d is small (~0.14).</td>
+              <td>Men buy high-ticket electronics (Product Category 1); women buy lifestyle/fashion. Bundle items across categories.</td>
+            </tr>
+            <tr>
+              <td>Effect of Sample Size on Sampling Distribution</td>
+              <td>Central Limit Theorem (n=10, 50, 100, 1000)</td>
+              <td>Raw purchase amounts are heavily right-skewed. As n reaches 50+, the sample mean distribution becomes Gaussian.</td>
+              <td>Validates parametric confidence intervals for the 100M shopper population.</td>
+            </tr>
+            <tr>
+              <td>Are Confidence Intervals for Male vs Female overlapping?</td>
+              <td>95% and 99% CI Construction</td>
+              <td><span class="chip hot">Viva Trap</span>: Male CI [$9,410, $9,465] and Female CI [$8,705, $8,765] do NOT overlap. Confirms distinct populations.</td>
+              <td>Segment marketing messaging and personalize Black Friday catalog placements.</td>
+            </tr>
+            <tr>
+              <td>Does spending differ across Age Life Stages?</td>
+              <td>One-Way ANOVA across 7 age cohorts</td>
+              <td>Ages 51-55 have highest average spend ($9,534); ages 0-17 have lowest ($8,933). Significant F-test.</td>
+              <td>Curate premium high-ticket items for 50+ age segment who possess highest disposable income.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Aerofit Content -->
+    <div class="case-card" id="case-content-aerofit" style="display:none;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+        <h3 style="font-size:18px;color:var(--purple);">Aerofit Treadmill Profiling Case Study</h3>
+        <span class="chip purple">Dataset: aerofit.csv (KP281, KP481, KP781)</span>
+      </div>
+      <p style="font-size:13.5px;color:var(--ink-dim);">
+        <strong>Problem Context:</strong> Aerofit wants to identify customer characteristics for each of its three treadmill models to guide personalized recommendations.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Treadmill Model</th>
+              <th>Positioning</th>
+              <th>Customer Income Profile</th>
+              <th>Recommended Hypothesis Test</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>KP281</strong></td>
+              <td>Entry-level ($1,500)</td>
+              <td>Mean Income: ~$46,000</td>
+              <td rowspan="3"><strong>One-Way ANOVA &amp; Kruskal-Wallis</strong>: Testing customer Income across the 3 product lines. p &lt; 0.001 proves income is the primary discriminator between entry/mid-tier and the premium KP781!</td>
+            </tr>
+            <tr>
+              <td><strong>KP481</strong></td>
+              <td>Mid-level ($2,500)</td>
+              <td>Mean Income: ~$49,000</td>
+            </tr>
+            <tr>
+              <td><strong>KP781</strong></td>
+              <td>Advanced ($3,500)</td>
+              <td>Mean Income: ~$75,000 (High Fitness)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 1. BASICS & POWER ==================== -->
+  <section class="panel" id="p-basics" hidden>
+    <h2>1. Hypothesis Testing Foundations &amp; Statistical Power</h2>
+    <p class="subtitle">Alpha (&alpha;), Beta (&beta;), and the inescapable tradeoff between false alarms and detection sensitivity.</p>
+
+    <div class="recall-box">
+      <span class="recall-tag">Core Recall</span>
+      <span class="recall-text">Statistical Power = 1 &minus; &beta;. It is the probability of correctly detecting a real effect when one truly exists. Aim for &ge; 80% (0.80).</span>
+    </div>
+
+    <div class="playground">
+      <div class="playground-title">
+        <span>Interactive Power &amp; Error Tradeoff Simulator</span>
+        <span id="power-badge" class="verdict-badge pass">High Power (&ge; 80%)</span>
+      </div>
+      <div class="playground-body">
+        <div class="controls">
+          <div class="control-group">
+            <label>Significance Level (&alpha;): <strong id="lbl-alpha">0.05</strong></label>
+            <input type="range" id="sl-alpha" min="0.01" max="0.20" step="0.01" value="0.05">
+          </div>
+          <div class="control-group">
+            <label>Effect Size / Separation (&Delta;): <strong id="lbl-delta">2.8</strong></label>
+            <input type="range" id="sl-delta" min="0.5" max="5.0" step="0.1" value="2.8">
+          </div>
+        </div>
+
+        <canvas id="cv-power" height="200" style="width:100%;display:block;"></canvas>
+
+        <div class="metric-strip">
+          <div class="metric-box">
+            <span class="metric-lbl">Type I Error (&alpha;)</span>
+            <span class="metric-val" id="val-t1" style="color:var(--hot);">5.0%</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Type II Error (&beta;)</span>
+            <span class="metric-val" id="val-t2" style="color:var(--gold);">12.3%</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Statistical Power (1 &minus; &beta;)</span>
+            <span class="metric-val" id="val-pow" style="color:var(--accent);">87.7%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Baoyu Bento Grid -->
+    <div class="bento-section">
+      <div class="bento-header">Bento Framework: Power &amp; Error Nuances</div>
+      <div class="bento-grid">
+        <div class="bento-card">
+          <div class="bento-top">
+            <div class="bento-icon" style="background:var(--accent-soft);color:var(--accent);">&#10003;</div>
+            <div class="bento-title" style="color:var(--accent);">Best Application &amp; Power Rules</div>
+          </div>
+          <ul class="bento-list">
+            <li><strong>Upfront Sample Sizing</strong>: Before launching an experiment, determine sample size so Power &ge; 80%. Underpowered tests waste traffic.</li>
+            <li><strong>Lowering &beta; Without Raising &alpha;</strong>: Only two ways: 1. Increase sample size (n), or 2. Reduce measurement noise (&sigma;).</li>
+          </ul>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-top">
+            <div class="bento-icon" style="background:var(--hot-soft);color:var(--hot);">&#9888;</div>
+            <div class="bento-title" style="color:var(--hot);">Type I vs Type II Severity</div>
+          </div>
+          <ul class="bento-list">
+            <li><strong>Type I (&alpha; False Alarm)</strong>: Convicting an innocent person; rolling out an ineffective feature. Set strict &alpha; = 0.01 for costly decisions.</li>
+            <li><strong>Type II (&beta; Missed Detection)</strong>: Letting a guilty person go free; failing to notice a life-saving medical drug.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 2. CLT & THE CI OVERLAP FALLACY ==================== -->
+  <section class="panel" id="p-clt" hidden>
+    <h2>2. Central Limit Theorem &amp; The CI Overlap Fallacy</h2>
+    <p class="subtitle">Why normal-based tests work on skewed business data &mdash; and why overlapping 95% CIs do NOT mean &quot;no difference&quot;.</p>
+
+    <div class="recall-box">
+      <span class="recall-tag">Deekshant's Golden Rule</span>
+      <span class="recall-text">Regardless of raw population skew (Walmart spend, Yulu demand), the sampling distribution of the mean &xbar; becomes normal as n &ge; 30 with SE = &sigma; / &radic;n. And: two 95% CIs can overlap by up to 29% and still have p &lt; 0.05!</span>
+    </div>
+
+    <!-- Playground 1: CLT Simulation -->
+    <div class="playground">
+      <div class="playground-title">
+        <span>Interactive CLT Simulator: Watch Sample Means Become Gaussian</span>
+        <span class="chip gold">CLT n &ge; 30 Convergence</span>
+      </div>
+      <div class="playground-body">
+        <div class="controls">
+          <div class="control-group">
+            <label>Raw Population Distribution:</label>
+            <select id="sel-clt-pop" style="background:var(--surface);border:1px solid var(--line);padding:6px 10px;border-radius:var(--radius-sm);color:var(--ink);font-family:var(--font-mono);font-size:13px;font-weight:600;">
+              <option value="skew">Right-Skewed (Walmart Spend / Incomes)</option>
+              <option value="uniform">Uniform Distribution (Dice / Flat)</option>
+              <option value="bimodal">Bimodal (Two Commuter Rush Hours)</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label>Sample Size (n): <strong id="lbl-clt-n">30</strong></label>
+            <input type="range" id="sl-clt-n" min="2" max="100" step="1" value="30">
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;">
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px;">
+            <div style="font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:6px;">1. Raw Underlying Population</div>
+            <canvas id="cv-clt-pop" height="130" style="width:100%;display:block;"></canvas>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px;">
+            <div style="font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;margin-bottom:6px;">2. Distribution of Sample Means (&xbar;)</div>
+            <canvas id="cv-clt-means" height="130" style="width:100%;display:block;"></canvas>
+          </div>
+        </div>
+
+        <div class="metric-strip">
+          <div class="metric-box">
+            <span class="metric-lbl">Population Mean (&mu;)</span>
+            <span class="metric-val" id="lbl-clt-mu">50.0</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Population SD (&sigma;)</span>
+            <span class="metric-val" id="lbl-clt-sigma">25.0</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Standard Error (SE = &sigma;/&radic;n)</span>
+            <span class="metric-val" id="lbl-clt-se" style="color:var(--accent);">4.56</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Normality Status</span>
+            <span class="metric-val" id="lbl-clt-status" style="font-size:13px;color:var(--blue);">Gaussian (Bell-Shaped)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Playground 2: The CI Overlap Fallacy -->
+    <div class="playground" style="margin-top:16px;">
+      <div class="playground-title">
+        <span>The 95% Confidence Interval Overlap Fallacy (Top Scaler Viva Gotcha)</span>
+        <span class="chip hot">Viva Trap #1</span>
+      </div>
+      <div class="playground-body">
+        <p style="font-size:13.5px;color:var(--ink-dim);margin-bottom:12px;">
+          Many engineers falsely believe: <em>&quot;If two 95% confidence intervals overlap, their difference cannot be statistically significant.&quot;</em> Test it yourself! Move the means so the whiskers barely overlap, and observe that <strong>p-value is still &lt; 0.05</strong>.
+        </p>
+
+        <div class="controls">
+          <div class="control-group">
+            <label>Group A Mean (&xbar;&#8321;): <strong id="lbl-ci-m1">100</strong></label>
+            <input type="range" id="sl-ci-m1" min="80" max="120" step="1" value="100">
+          </div>
+          <div class="control-group">
+            <label>Group A Standard Error (SE&#8321;): <strong id="lbl-ci-se1">3.0</strong></label>
+            <input type="range" id="sl-ci-se1" min="1" max="8" step="0.5" value="3.0">
+          </div>
+          <div class="control-group">
+            <label>Group B Mean (&xbar;&#8322;): <strong id="lbl-ci-m2">108</strong></label>
+            <input type="range" id="sl-ci-m2" min="90" max="130" step="1" value="108">
+          </div>
+          <div class="control-group">
+            <label>Group B Standard Error (SE&#8322;): <strong id="lbl-ci-se2">3.0</strong></label>
+            <input type="range" id="sl-ci-se2" min="1" max="8" step="0.5" value="3.0">
+          </div>
+        </div>
+
+        <canvas id="cv-ci-overlap" height="140" style="width:100%;display:block;margin:12px 0;background:var(--surface);border-radius:var(--radius-sm);"></canvas>
+
+        <div class="metric-strip">
+          <div class="metric-box">
+            <span class="metric-lbl">Mean Difference (&Delta;)</span>
+            <span class="metric-val" id="lbl-ci-diff">8.0</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Whisker Overlap Status</span>
+            <span class="metric-val" id="lbl-ci-overlap-dist">Overlapping (1.2 units)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Joint Difference SE</span>
+            <span class="metric-val" id="lbl-ci-sediff">4.24</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Two-Sample Z-Test p-value</span>
+            <span class="metric-val" id="lbl-ci-pval" style="color:var(--accent);">p = 0.024</span>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <div id="ci-badge" class="verdict-badge pass">Overlapping CIs, Yet p &lt; 0.05 (Statistically Significant!)</div>
+          <span style="font-size:12.5px;color:var(--muted);font-family:var(--font-mono);">Math Law: SE_diff = &radic;(SE&#8321;&sup2; + SE&#8322;&sup2;) &le; SE&#8321; + SE&#8322;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Baoyu Bento Grid -->
+    <div class="bento-section">
+      <div class="bento-header">Bento Framework: CLT &amp; Confidence Interval Properties</div>
+      <div class="bento-grid">
+        <div class="bento-card">
+          <div class="bento-top">
+            <div class="bento-icon" style="background:var(--accent-soft);color:var(--accent);">&#10003;</div>
+            <div class="bento-title" style="color:var(--accent);">Core Strengths &amp; Why It Matters</div>
+          </div>
+          <ul class="bento-list">
+            <li><strong>Liberates Real-World Data</strong>: Income distributions, order values, and app latencies are almost never Gaussian. CLT guarantees that the sample mean &xbar; behaves normally anyway if n &ge; 30.</li>
+            <li><strong>Predictable Error Shrinkage</strong>: Standard Error shrinks at rate 1/&radic;n. Quadrupling your sample size halves your estimation uncertainty.</li>
+          </ul>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-top">
+            <div class="bento-icon" style="background:var(--hot-soft);color:var(--hot);">&#9888;</div>
+            <div class="bento-title" style="color:var(--hot);">The CI Overlap Fallacy &amp; Traps</div>
+          </div>
+          <ul class="bento-list">
+            <li><strong>Non-overlapping CIs Guarantee Significance</strong>: If two 95% CIs do not touch, p is always &lt; 0.01 (very safe).</li>
+            <li><strong>Overlapping CIs Can Still Be Significant</strong>: Because &radic;(SE&#8321;&sup2; + SE&#8322;&sup2;) is strictly smaller than (SE&#8321; + SE&#8322;), two CIs can overlap by up to 29% and still reject H&#8320; at &alpha; = 0.05! Never diagnose hypothesis tests by eye without computing the joint test statistic.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 3. Z-TEST & STORE SALES ==================== -->
+  <section class="panel" id="p-z" hidden>
+    <h2>3. Z-Test: Means &amp; Proportions (Colab Lectures 3 &amp; 5)</h2>
+    <p class="subtitle">Firm A vs Firm B weekly store sales &mdash; and customer satisfaction proportions.</p>
+
+    <div class="recall-box">
+      <span class="recall-tag">Deekshant's Colab Lesson</span>
+      <span class="recall-text">Use Z-Test when population variance &sigma; is known OR sample size n &ge; 30. For customer satisfaction proportions, compute pooled variance.</span>
+    </div>
+
+    <div class="playground">
+      <div class="playground-title">
+        <span>Firm A Marketing Sales Simulator (Lecture 3 Colab)</span>
+        <span id="z-badge" class="verdict-badge pass">Significant Positive Effect</span>
+      </div>
+      <div class="playground-body">
+        <div class="controls">
+          <div class="control-group">
+            <label>Baseline Weekly Sales (&mu;&#8320;): <strong id="lbl-z-mu0">50.0</strong></label>
+            <input type="range" id="sl-z-mu0" min="40" max="60" step="0.5" value="50">
+          </div>
+          <div class="control-group">
+            <label>Observed Store Mean (&xbar;): <strong id="lbl-z-xbar">52.8</strong></label>
+            <input type="range" id="sl-z-xbar" min="45" max="65" step="0.2" value="52.8">
+          </div>
+          <div class="control-group">
+            <label>Population SD (&sigma;): <strong id="lbl-z-sigma">7.5</strong></label>
+            <input type="range" id="sl-z-sigma" min="2" max="15" step="0.5" value="7.5">
+          </div>
+          <div class="control-group">
+            <label>Store Count (n): <strong id="lbl-z-n">50</strong></label>
+            <input type="range" id="sl-z-n" min="10" max="200" step="5" value="50">
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-bottom:12px;font-size:13px;font-family:var(--font-mono);">
+          <label><input type="radio" name="z-tail" value="two" checked> Two-Tailed (&ne;)</label>
+          <label><input type="radio" name="z-tail" value="right"> Right-Tailed (&gt; Firm A Boost)</label>
+        </div>
+
+        <canvas id="cv-ztest" height="210" style="width:100%;display:block;"></canvas>
+
+        <div class="metric-strip">
+          <div class="metric-box">
+            <span class="metric-lbl">Standard Error (SE)</span>
+            <span class="metric-val" id="lbl-z-se">1.06</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Z-Statistic</span>
+            <span class="metric-val" id="lbl-z-stat">2.64</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Calculated p-value</span>
+            <span class="metric-val" id="lbl-z-pval" style="color:var(--accent);">p = 0.0041</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Python Recipe -->
+    <div class="card">
+      <div class="card-title">Python Code Recipe: 1-Sample &amp; 2-Sample Proportion Tests</div>
+      <div class="code-block"><pre><code>from statsmodels.stats.proportion import proportions_ztest
+
+# Lecture 5: 1-Sample Proportion Test (Customer satisfaction vs 70% target)
+# count = number of satisfied customers, nobs = total surveyed
+z_stat, p_val = proportions_ztest(count=75, nobs=100, value=0.70)
+
+# Lecture 5: 2-Sample Proportion Test (Firm A vs Firm B customer conversion)
+z_stat_2, p_val_2 = proportions_ztest(count=[140, 110], nobs=[200, 200])</code></pre></div>
+    </div>
+  </section>
+
+  <!-- ==================== 4. T-TEST & COHORTS ==================== -->
+  <section class="panel" id="p-t" hidden>
+    <h2>4. Student's &amp; Welch's T-Test (Colab Lectures 5 &amp; 6)</h2>
+    <p class="subtitle">Fat tails when &sigma; is unknown, Welch's correction, and paired before-after cohorts.</p>
+
+    <div class="recall-box">
+      <span class="recall-tag">Deekshant's Colab Lesson</span>
+      <span class="recall-text">When sample variances differ, always use Welch's T-Test (equal_var=False). As degrees of freedom increase (df &ge; 30), Student's t morphs into standard normal Z!</span>
+    </div>
+
+    <div class="playground">
+      <div class="playground-title">
+        <span>Degrees of Freedom (df) Morph Visualizer: Student-t vs Gaussian-Z</span>
+        <span id="t-badge" class="verdict-badge reject">Heavy Tails (Prone to Extreme Values)</span>
+      </div>
+      <div class="playground-body">
+        <div class="controls">
+          <div class="control-group">
+            <label>Degrees of Freedom (df = n &minus; 1): <strong id="lbl-t-df">4</strong></label>
+            <input type="range" id="sl-t-df" min="1" max="40" step="1" value="4">
+          </div>
+        </div>
+
+        <canvas id="cv-ttest" height="210" style="width:100%;display:block;"></canvas>
+
+        <div class="metric-strip">
+          <div class="metric-box">
+            <span class="metric-lbl">Tail Excess Kurtosis</span>
+            <span class="metric-val" id="lbl-t-kurt">Heavy</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Two-Tailed Critical t (95%)</span>
+            <span class="metric-val" id="lbl-t-crit">&plusmn;2.776</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Normal Z Reference (95%)</span>
+            <span class="metric-val">&plusmn;1.960</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5. A/B TESTING & SIZING ==================== -->
+  <section class="panel" id="p-ab" hidden>
+    <h2>5. A/B Testing &amp; Sample Sizing in Industry (Lecture 7/8 &amp; 10)</h2>
+    <p class="subtitle">Translating hypothesis tests into product tech &mdash; YouTube watch-time, conversion lift, and sample size math.</p>
+
+    <div class="recall-box">
+      <span class="recall-tag">Classroom Connection</span>
+      <span class="recall-text">Deekshant's Lecture 7/8 YouTube watch-time experiment: Control vs Treatment on watch_time_hrs using Welch's ttest_ind. Never run underpowered tests or peek at p-values daily!</span>
+    </div>
+
+    <div class="playground">
+      <div class="playground-title">
+        <span>Interactive A/B Experiment Calculator &amp; Lift Simulator</span>
+        <span id="ab-badge" class="verdict-badge pass">Significant Lift: Safe to Ship</span>
+      </div>
+      <div class="playground-body">
+        <div class="controls">
+          <div class="control-group">
+            <label>Baseline Metric Value: <strong id="lbl-ab-base">10.0%</strong></label>
+            <input type="range" id="sl-ab-base" min="2" max="30" step="0.5" value="10">
+          </div>
+          <div class="control-group">
+            <label>Desired Relative Lift: <strong id="lbl-ab-lift">+15%</strong></label>
+            <input type="range" id="sl-ab-lift" min="2" max="40" step="1" value="15">
+          </div>
+          <div class="control-group">
+            <label>Sample Size per Variant (n): <strong id="lbl-ab-n">8,000</strong></label>
+            <input type="range" id="sl-ab-n" min="500" max="25000" step="500" value="8000">
+          </div>
+        </div>
+
+        <canvas id="cv-ab" height="150" style="width:100%;display:block;margin:12px 0;background:var(--surface);border-radius:var(--radius-sm);"></canvas>
+
+        <div class="metric-strip">
+          <div class="metric-box">
+            <span class="metric-lbl">Control Conversion</span>
+            <span class="metric-val" id="lbl-ab-cval">10.0%</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Treatment Conversion</span>
+            <span class="metric-val" id="lbl-ab-tval" style="color:var(--accent);">11.5%</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Required n (Power 80%)</span>
+            <span class="metric-val" id="lbl-ab-reqn">6,840</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Two-Sample p-value</span>
+            <span class="metric-val" id="lbl-ab-pval" style="color:var(--accent);">p = 0.0028</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Baoyu Bento Grid -->
+    <div class="bento-section">
+      <div class="bento-header">Bento Framework: A/B Testing Pitfalls &amp; Execution Rules</div>
+      <div class="bento-grid">
+        <div class="bento-card">
+          <div class="bento-top">
+            <div class="bento-icon" style="background:var(--accent-soft);color:var(--accent);">&#10003;</div>
+            <div class="bento-title" style="color:var(--accent);">Core Strengths</div>
+          </div>
+          <ul class="bento-list">
+            <li><strong>Gold Standard of Causality</strong>: Eliminates confounding bias through pure random assignment between control and treatment.</li>
+            <li><strong>Quantifiable Business ROI</strong>: Measures exact lift and confidence intervals on revenue or watch-time.</li>
+          </ul>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-top">
+            <div class="bento-icon" style="background:var(--hot-soft);color:var(--hot);">&#9888;</div>
+            <div class="bento-title" style="color:var(--hot);">Top 3 Deadly Industry Traps</div>
+          </div>
+          <ul class="bento-list">
+            <li><strong>The Peeking Problem</strong>: Checking p-value every day and stopping the experiment as soon as p &lt; 0.05 inflates Type I false alarm rate from 5% to over 30%!</li>
+            <li><strong>Sample Ratio Mismatch (SRM)</strong>: If traffic isn't split 50:50 (tested via Chi-Square), bot filters or routing bugs invalidate the entire test.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6. CHI-SQUARE & COCHRAN ==================== -->
+  <section class="panel" id="p-chi" hidden>
+    <h2>6. Chi-Square (&chi;&sup2;) &amp; Cochran's Rule (Colab Lecture 6)</h2>
+    <p class="subtitle">Contingency tables, independence testing, and the critical Cochran sample size condition.</p>
+
+    <div class="recall-box">
+      <span class="recall-tag">Deekshant's Colab Lesson</span>
+      <span class="recall-text">Test of Independence: E_ij = (Row Total &middot; Col Total) / Grand Total. Cochran's Condition: All E_ij &ge; 1, and no more than 20% of cells &lt; 5!</span>
+    </div>
+
+    <div class="playground">
+      <div class="playground-title">
+        <span>Interactive 2 &times; 2 Contingency Matrix (Try Custom Counts)</span>
+        <span id="chi-badge" class="verdict-badge pass">Significant Association (p &lt; 0.05)</span>
+      </div>
+      <div class="playground-body">
+        <div class="ct-grid">
+          <div></div>
+          <div class="ct-head">Condition A</div>
+          <div class="ct-head">Condition B</div>
+          <div class="ct-head">Row Sum</div>
+
+          <div class="ct-head">Group 1</div>
+          <input type="number" id="ct-o11" class="ct-input" value="120">
+          <input type="number" id="ct-o12" class="ct-input" value="80">
+          <div id="ct-r1" class="ct-margin">200</div>
+
+          <div class="ct-head">Group 2</div>
+          <input type="number" id="ct-o21" class="ct-input" value="60">
+          <input type="number" id="ct-o22" class="ct-input" value="140">
+          <div id="ct-r2" class="ct-margin">200</div>
+
+          <div class="ct-head">Col Sum</div>
+          <div id="ct-c1" class="ct-margin">180</div>
+          <div id="ct-c2" class="ct-margin">220</div>
+          <div id="ct-total" class="ct-margin" style="color:var(--accent);">400</div>
+        </div>
+
+        <div class="metric-strip" style="margin-top:16px;">
+          <div class="metric-box">
+            <span class="metric-lbl">&chi;&sup2; Test Statistic</span>
+            <span class="metric-val" id="lbl-chi-stat">36.36</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Degrees of Freedom</span>
+            <span class="metric-val">df = 1</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Calculated p-value</span>
+            <span class="metric-val" id="lbl-chi-pval" style="color:var(--accent);">p &lt; 0.0001</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Cochran Check</span>
+            <span class="metric-val" id="lbl-cochran-status" style="font-size:12.5px;color:var(--accent);">Pass (All E &ge; 5)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Yulu Cochran Anomaly Card -->
+    <div class="card" style="border-left:4px solid var(--hot);">
+      <div class="card-title" style="color:var(--hot);">The Yulu Weather=4 Anomaly: A Masterclass in Cochran's Rule</div>
+      <p style="font-size:13.5px;color:var(--ink-dim);line-height:1.5;">
+        In the Yulu Case Study, students cross-tabulate <code>season</code> (4 rows) and <code>weather</code> (4 columns). However, <strong>Weather 4 (Heavy Rain/Ice) only occurs 1 single time</strong> out of 10,886 hours! This causes expected frequencies in column 4 to drop to &approx; 0.25 (&lt; 1), severely breaking Cochran's condition.
+      </p>
+      <div style="margin-top:10px;font-size:13px;color:var(--ink);font-weight:600;">
+        How to resolve in your case study:
+      </div>
+      <ul style="font-size:13px;color:var(--ink-dim);margin-left:18px;margin-top:4px;">
+        <li><strong>Option 1 (Recommended)</strong>: Combine Weather 3 (&quot;Light Rain&quot;) and Weather 4 into a unified &quot;Severe Weather&quot; category.</li>
+        <li><strong>Option 2</strong>: Run Chi-Square dropping Weather 4 with explicit documentation of the single-row limitation.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== 7. ANOVA & TWO-WAY ==================== -->
+  <section class="panel" id="p-anova" hidden>
+    <h2>7. ANOVA &amp; Two-Way Interaction (Colab Lectures 7 &amp; 8)</h2>
+    <p class="subtitle">Comparing 3+ group means, Sum of Squares partitioning, and interaction plots.</p>
+
+    <div class="recall-box">
+      <span class="recall-tag">Deekshant's Colab Lesson</span>
+      <span class="recall-text">F = Between-Group Variance (MS_between) / Within-Group Variance (MS_within). In Two-Way ANOVA, when lines CROSS or DIVERGE on the interaction plot, the interaction effect is statistically significant!</span>
+    </div>
+
+    <div class="playground">
+      <div class="playground-title">
+        <span>Interactive One-Way ANOVA (3 Groups Variance Partitioner)</span>
+        <span id="anova-badge" class="verdict-badge pass">Significant Group Differences</span>
+      </div>
+      <div class="playground-body">
+        <div class="controls">
+          <div class="control-group">
+            <label>Group 1 Mean (&mu;&#8321;): <strong id="lbl-a-g1">45</strong></label>
+            <input type="range" id="sl-a-g1" min="30" max="70" value="45">
+          </div>
+          <div class="control-group">
+            <label>Group 2 Mean (&mu;&#8322;): <strong id="lbl-a-g2">52</strong></label>
+            <input type="range" id="sl-a-g2" min="30" max="70" value="52">
+          </div>
+          <div class="control-group">
+            <label>Group 3 Mean (&mu;&#8323;): <strong id="lbl-a-g3">60</strong></label>
+            <input type="range" id="sl-a-g3" min="30" max="70" value="60">
+          </div>
+          <div class="control-group">
+            <label>Within-Group Noise (&sigma;): <strong id="lbl-a-noise">8.0</strong></label>
+            <input type="range" id="sl-a-noise" min="2" max="20" step="0.5" value="8">
+          </div>
+        </div>
+
+        <canvas id="cv-anova" height="200" style="width:100%;display:block;"></canvas>
+
+        <div class="metric-strip">
+          <div class="metric-box">
+            <span class="metric-lbl">F-Statistic</span>
+            <span class="metric-val" id="lbl-a-fstat">14.28</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">p-value</span>
+            <span class="metric-val" id="lbl-a-pval" style="color:var(--accent);">p &lt; 0.001</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Two-Way ANOVA Interaction Sandbox -->
+    <div class="playground" style="margin-top:16px;">
+      <div class="playground-title">
+        <span>Two-Way ANOVA: Live Interaction Plot (Flavour &times; Location)</span>
+        <span id="interact-badge" class="verdict-badge pass">Lines Parallel: No Interaction</span>
+      </div>
+      <div class="playground-body">
+        <div class="controls">
+          <div class="control-group">
+            <label>Interaction Intensity: <strong id="lbl-interact-val">0.0 (Parallel)</strong></label>
+            <input type="range" id="sl-interact" min="-30" max="30" step="1" value="0">
+          </div>
+        </div>
+
+        <canvas id="cv-interact" height="180" style="width:100%;display:block;"></canvas>
+
+        <p style="font-size:13px;color:var(--muted);margin-top:8px;">
+          <strong>Deekshant's Diagnostic:</strong> When lines are parallel, Flavour and Location operate independently. When lines cross or diverge sharply, interaction is significant &mdash; run <code>pg.anova(..., ss_type=2)</code> or <code>ols('Sales ~ C(Flavour) * C(Location)')</code>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 8. DIAGNOSTICS & KW ==================== -->
+  <section class="panel" id="p-adv" hidden>
+    <h2>8. Assumption Diagnostics &amp; Kruskal-Wallis (Colab Lecture 7)</h2>
+    <p class="subtitle">Q-Q Plots, Shapiro-Wilk, Levene's test, and non-parametric rank swaps.</p>
+
+    <div class="recall-box">
+      <span class="recall-tag">Deekshant's Colab Lesson</span>
+      <span class="recall-text">Diagnostic H&#8320; is what you WANT! Shapiro H&#8320;: Data is Normal. Levene H&#8320;: Variances are Equal. So you want p &gt; 0.05 to proceed with parametric tests. If p &le; 0.05, switch to Kruskal-Wallis!</span>
+    </div>
+
+    <div class="playground">
+      <div class="playground-title">
+        <span>Interactive Q-Q Plot Shape Explorer</span>
+        <span id="qq-badge" class="verdict-badge pass">Normal Distribution</span>
+      </div>
+      <div class="playground-body">
+        <div class="controls">
+          <div class="control-group">
+            <label>Sample Distribution Shape:</label>
+            <select id="sel-qq-shape" style="background:var(--surface);border:1px solid var(--line);padding:6px 10px;border-radius:var(--radius-sm);color:var(--ink);font-family:var(--font-mono);font-size:13px;font-weight:600;">
+              <option value="normal">Normal (Points hug the diagonal line)</option>
+              <option value="skew">Right-Skewed (Upward Curving Banana)</option>
+              <option value="heavy">Heavy Tails / Outliers (S-Curve Departure)</option>
+            </select>
+          </div>
+        </div>
+
+        <canvas id="cv-qq" height="210" style="width:100%;display:block;"></canvas>
+
+        <div class="metric-strip">
+          <div class="metric-box">
+            <span class="metric-lbl">Shapiro-Wilk Decision</span>
+            <span class="metric-val" id="lbl-shapiro-res" style="font-size:13px;color:var(--accent);">p &gt; 0.05 (Assume Normal)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Recommended Test Route</span>
+            <span class="metric-val" id="lbl-route-res" style="font-size:13px;color:var(--blue);">Parametric ANOVA / T-Test</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 9. KS-TEST & CDF DIVERGENCE ==================== -->
+  <section class="panel" id="p-ks" hidden>
+    <h2>9. Kolmogorov-Smirnov (KS-Test) &amp; Empirical CDFs (Lecture 7/8)</h2>
+    <p class="subtitle">Comparing full probability distribution shapes beyond just the mean &mdash; patient recovery times &amp; income distributions.</p>
+
+    <div class="recall-box">
+      <span class="recall-tag">Deekshant's Colab Lesson</span>
+      <span class="recall-text">T-test only checks if means match. KS-Test compares the entire empirical cumulative distribution function (CDF) shape, spread, and tails via D = sup |F&#8321;(x) - F&#8322;(x)|.</span>
+    </div>
+
+    <div class="playground">
+      <div class="playground-title">
+        <span>Interactive Empirical CDF &amp; D-Statistic Canvas (Medicine 1 vs Medicine 2)</span>
+        <span id="ks-badge" class="verdict-badge pass">Distributions Consistent (H&#8320; Holds)</span>
+      </div>
+      <div class="playground-body">
+        <div class="controls">
+          <div class="control-group">
+            <label>Sample 2 Mean Shift (&Delta;&mu;): <strong id="lbl-ks-shift">0.0</strong></label>
+            <input type="range" id="sl-ks-shift" min="-2.5" max="2.5" step="0.1" value="0.0">
+          </div>
+          <div class="control-group">
+            <label>Sample 2 Variance Scale (&sigma;&#8322;/&sigma;&#8321;): <strong id="lbl-ks-spread">1.0</strong></label>
+            <input type="range" id="sl-ks-spread" min="0.5" max="3.0" step="0.1" value="1.0">
+          </div>
+        </div>
+
+        <canvas id="cv-ks" height="200" style="width:100%;display:block;"></canvas>
+
+        <div class="metric-strip">
+          <div class="metric-box">
+            <span class="metric-lbl">Max CDF Divergence (D)</span>
+            <span class="metric-val" id="lbl-ks-dstat" style="color:var(--accent);">0.082</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Critical D-Threshold (&alpha; = 0.05)</span>
+            <span class="metric-val" id="lbl-ks-dcrit">0.192</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Asymptotic p-value</span>
+            <span class="metric-val" id="lbl-ks-pval" style="color:var(--accent);">p = 0.62</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Python Recipe -->
+    <div class="card">
+      <div class="card-title">Python Code Recipe: 2-Sample &amp; 1-Sample KS-Tests</div>
+      <div class="code-block"><pre><code>from scipy.stats import kstest
+
+# Lecture 7/8: Testing patient recovery times under Medicine 1 vs Medicine 2
+# H0: Distribution of sample 1 is the same as distribution of sample 2
+d_stat, p_val = kstest(r1, r2)
+print(f"KS Statistic: {d_stat:.4f}, P-value: {p_val:.4f}")
+
+# 1-Sample KS-Test: Testing if data matches standard Normal distribution
+d_stat_norm, p_val_norm = kstest(sample_data, 'norm')</code></pre></div>
+    </div>
+  </section>
+
+  <!-- ==================== 10. CORRELATION & HEATMAPS ==================== -->
+  <section class="panel" id="p-corr" hidden>
+    <h2>10. Correlation, Covariance &amp; Heatmaps (Colab Lecture 9)</h2>
+    <p class="subtitle">Pearson vs Spearman rank, the devastating impact of outliers, and co-movement.</p>
+
+    <div class="recall-box">
+      <span class="recall-tag">Deekshant's Colab Lesson</span>
+      <span class="recall-text">Pearson r measures LINEAR co-movement and collapses with a single extreme outlier. Spearman &rho; measures MONOTONIC rank co-movement and is immune to outliers!</span>
+    </div>
+
+    <div class="playground">
+      <div class="playground-title">
+        <span>Interactive Outlier Attack: Pearson Collapse vs Spearman Resilience</span>
+        <span id="corr-badge" class="verdict-badge pass">Linear Co-Movement</span>
+      </div>
+      <div class="playground-body">
+        <div class="controls">
+          <div class="control-group">
+            <label>Underlying Correlation (&rho;): <strong id="lbl-corr-r">0.85</strong></label>
+            <input type="range" id="sl-corr-r" min="-0.95" max="0.95" step="0.05" value="0.85">
+          </div>
+          <div class="control-group" style="justify-content:center;">
+            <label><input type="checkbox" id="chk-outlier"> <strong>Inject Malicious Outlier (+3, -3)</strong></label>
+          </div>
+        </div>
+
+        <canvas id="cv-corr" height="210" style="width:100%;display:block;"></canvas>
+
+        <div class="metric-strip">
+          <div class="metric-box">
+            <span class="metric-lbl">Pearson Correlation (r)</span>
+            <span class="metric-val" id="lbl-pearson" style="color:var(--hot);">0.85</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Spearman Rank (&rho;)</span>
+            <span class="metric-val" id="lbl-spearman" style="color:var(--accent);">0.85</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 11. FEATURE ENGINEERING 1 ==================== -->
+  <section class="panel" id="p-fe1" hidden>
+    <h2>11. Feature Engineering 1: Imputation &amp; Outliers (Colab Lectures 10 &amp; 12)</h2>
+    <p class="subtitle">SimpleImputer, Skewness, log(1+x), Z-score clipping, and IQR fences.</p>
+
+    <div class="recall-box">
+      <span class="recall-tag">Deekshant's Loan Dataset Lesson</span>
+      <span class="recall-text">For skewed numeric fields (EMI, LoanAmount, Income): Impute via MEDIAN. For categorical fields (Gender, Married, Education): Impute via MOST_FREQUENT!</span>
+    </div>
+
+    <div class="playground">
+      <div class="playground-title">
+        <span>Interactive Skewness &amp; log(1+x) Normalizer</span>
+        <span id="skew-badge" class="verdict-badge reject">Violates Normality: Impute via Median</span>
+      </div>
+      <div class="playground-body">
+        <div class="controls">
+          <div class="control-group">
+            <label>Raw Data Skew Level:</label>
+            <input type="range" id="sl-skew" min="1" max="3" step="1" value="2">
+          </div>
+          <div class="control-group" style="justify-content:center;">
+            <button id="btn-toggle-log" class="nav-btn" style="width:100%;justify-content:center;">Apply log(1+x) Transform</button>
+          </div>
+        </div>
+
+        <canvas id="cv-skew" height="210" style="width:100%;display:block;"></canvas>
+
+        <div class="metric-strip">
+          <div class="metric-box">
+            <span class="metric-lbl">Distribution State</span>
+            <span class="metric-val" id="lbl-dist-state">Raw Positive Skew</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Mean vs Median Gap</span>
+            <span class="metric-val" id="lbl-dist-gap" style="color:var(--hot);">Mean &gt;&gt; Median</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 12. FEATURE ENGINEERING 2 ==================== -->
+  <section class="panel" id="p-fe2" hidden>
+    <h2>12. Feature Engineering 2: Encodings &amp; Scalers (Colab Lecture 13)</h2>
+    <p class="subtitle">Target Encoding with additive smoothing &mdash; and StandardScaler vs MinMaxScaler vs RobustScaler.</p>
+
+    <div class="recall-box">
+      <span class="recall-tag">Deekshant's Smoothing Formula</span>
+      <span class="recall-text">Smoothed Target = (n &middot; y&#772;_cat + m &middot; y&#772;_global) / (n + m). With small sample sizes n, raw target encoding severely overfits! Smoothing pulls rare categories safely toward the global prior.</span>
+    </div>
+
+    <div class="playground">
+      <div class="playground-title">
+        <span>Target Encoding Additive Smoothing Sandbox</span>
+        <span id="te-badge" class="verdict-badge pass">Leakage Prevented</span>
+      </div>
+      <div class="playground-body">
+        <div class="controls">
+          <div class="control-group">
+            <label>Category Sample Size (n): <strong id="lbl-te-n">2</strong></label>
+            <input type="range" id="sl-te-n" min="1" max="50" step="1" value="2">
+          </div>
+          <div class="control-group">
+            <label>Category Target Mean (y&#772;_cat): <strong id="lbl-te-cat">1.00</strong></label>
+            <input type="range" id="sl-te-cat" min="0" max="1" step="0.05" value="1.0">
+          </div>
+          <div class="control-group">
+            <label>Smoothing Weight (m): <strong id="lbl-te-m">10</strong></label>
+            <input type="range" id="sl-te-m" min="1" max="50" step="1" value="10">
+          </div>
+        </div>
+
+        <div class="metric-strip">
+          <div class="metric-box">
+            <span class="metric-lbl">Global Mean (Prior)</span>
+            <span class="metric-val">0.300</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Raw Target Encode (Overfits!)</span>
+            <span class="metric-val" id="lbl-te-raw" style="color:var(--hot);">1.000</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-lbl">Smoothed Value</span>
+            <span class="metric-val" id="lbl-te-smooth" style="color:var(--accent);">0.417</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scaler Outlier Sandbox -->
+    <div class="playground" style="margin-top:16px;">
+      <div class="playground-title">
+        <span>Scaler Behavior Under Outliers: Visual Benchmark</span>
+      </div>
+      <div class="playground-body">
+        <canvas id="cv-scaler" height="220" style="width:100%;display:block;"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 13. PROBLEM SOLVING ARENA ==================== -->
+  <section class="panel" id="p-arena" hidden>
+    <h2>13. Classroom Problem Solving Arena</h2>
+    <p class="subtitle">6 real-world exam and interview scenarios directly from Deekshant's lecture problem sets &mdash; test your diagnostic intuition.</p>
+
+    <div class="recall-box">
+      <span class="recall-tag">3-Step Problem Solving Framework</span>
+      <span class="recall-text">1. Identify variable types (Continuous vs Categorical) &rarr; 2. Count independent vs paired groups &rarr; 3. Verify distribution assumptions.</span>
+    </div>
+
+    <div class="arena-grid">
+      <!-- Scenario 1 -->
+      <div class="arena-card" data-correct="anova">
+        <div class="arena-badge" style="background:var(--accent-soft);color:var(--accent);">Scenario 1 &bull; Marketing Strategy</div>
+        <div class="arena-scenario">A marketing analyst wants to determine if there is a significant difference in <strong>average sales revenue</strong> across <strong>three advertising strategies</strong> used by the company.</div>
+        <div class="arena-question">Which statistical test should the analyst run?</div>
+        <div class="arena-options">
+          <button class="arena-opt" data-val="ttest">Two-Sample T-Test</button>
+          <button class="arena-opt" data-val="anova">One-Way ANOVA</button>
+          <button class="arena-opt" data-val="chi">Chi-Square Test</button>
+          <button class="arena-opt" data-val="pearson">Pearson Correlation</button>
+        </div>
+        <div class="arena-feedback"></div>
+        <button class="arena-code-btn">&#128065; View Python Code Recipe</button>
+        <div class="arena-code-box">
+          <div class="code-block"><pre><code>from scipy import stats
+# Comparing continuous revenue across 3 strategies
+stats.f_oneway(strat_a_sales, strat_b_sales, strat_c_sales)</code></pre></div>
+        </div>
+      </div>
+
+      <!-- Scenario 2 -->
+      <div class="arena-card" data-correct="friedman">
+        <div class="arena-badge" style="background:var(--blue-soft);color:var(--blue);">Scenario 2 &bull; Machine Learning Benchmarking</div>
+        <div class="arena-scenario">A Senior Data Analyst compares the prediction accuracy of <strong>three ML algorithms (A, B, C)</strong> evaluated on the <strong>identical 10 cross-validation folds</strong>.</div>
+        <div class="arena-question">Which test is appropriate?</div>
+        <div class="arena-options">
+          <button class="arena-opt" data-val="ind_anova">Independent ANOVA</button>
+          <button class="arena-opt" data-val="friedman">Repeated Measures / Friedman</button>
+          <button class="arena-opt" data-val="chi">Chi-Square Test</button>
+          <button class="arena-opt" data-val="ztest">Two-Sample Z-Test</button>
+        </div>
+        <div class="arena-feedback"></div>
+        <button class="arena-code-btn">&#128065; View Python Code Recipe</button>
+        <div class="arena-code-box">
+          <div class="code-block"><pre><code>from scipy import stats
+# Paired/Repeated folds across algorithms
+stats.friedmanchisquare(algo_a_scores, algo_b_scores, algo_c_scores)</code></pre></div>
+        </div>
+      </div>
+
+      <!-- Scenario 3 -->
+      <div class="arena-card" data-correct="ks">
+        <div class="arena-badge" style="background:var(--purple-soft);color:var(--purple);">Scenario 3 &bull; Income Distribution Matching</div>
+        <div class="arena-scenario">A Data Scientist at a bank is analyzing the <strong>full distribution of monthly income</strong> for Sales vs Marketing to see if their shapes, spreads, and percentiles differ.</div>
+        <div class="arena-question">Which test compares full distribution shapes?</div>
+        <div class="arena-options">
+          <button class="arena-opt" data-val="ttest">Two-Sample T-Test</button>
+          <button class="arena-opt" data-val="ks">Kolmogorov-Smirnov (KS)</button>
+          <button class="arena-opt" data-val="chi">Chi-Square Test</button>
+          <button class="arena-opt" data-val="pearson">Pearson Correlation</button>
+        </div>
+        <div class="arena-feedback"></div>
+        <button class="arena-code-btn">&#128065; View Python Code Recipe</button>
+        <div class="arena-code-box">
+          <div class="code-block"><pre><code>from scipy import stats
+# Compares full empirical CDF shapes (D = sup |F1 - F2|)
+stats.kstest(sales_incomes, mktg_incomes)</code></pre></div>
+        </div>
+      </div>
+
+      <!-- Scenario 4 -->
+      <div class="arena-card" data-correct="zprop">
+        <div class="arena-badge" style="background:var(--gold-soft);color:var(--gold);">Scenario 4 &bull; Email A/B Campaign</div>
+        <div class="arena-scenario">A Digital Marketing Manager runs an A/B test comparing <strong>click-through conversion rates</strong> for Version A (1,200 / 10,000) vs Version B (1,450 / 10,000).</div>
+        <div class="arena-question">Which test for two large proportions?</div>
+        <div class="arena-options">
+          <button class="arena-opt" data-val="anova">One-Way ANOVA</button>
+          <button class="arena-opt" data-val="zprop">2-Sample Z Proportion Test</button>
+          <button class="arena-opt" data-val="paired_t">Paired T-Test</button>
+          <button class="arena-opt" data-val="spearman">Spearman Correlation</button>
+        </div>
+        <div class="arena-feedback"></div>
+        <button class="arena-code-btn">&#128065; View Python Code Recipe</button>
+        <div class="arena-code-box">
+          <div class="code-block"><pre><code>from statsmodels.stats.proportion import proportions_ztest
+# Comparing two independent proportions
+proportions_ztest(count=[1200, 1450], nobs=[10000, 10000])</code></pre></div>
+        </div>
+      </div>
+
+      <!-- Scenario 5 -->
+      <div class="arena-card" data-correct="corr">
+        <div class="arena-badge" style="background:var(--hot-soft);color:var(--hot);">Scenario 5 &bull; Salary vs Experience</div>
+        <div class="arena-scenario">An HR data analyst is investigating the strength and direction of association between <strong>years of experience</strong> and <strong>annual salary</strong>.</div>
+        <div class="arena-question">Which statistical metric?</div>
+        <div class="arena-options">
+          <button class="arena-opt" data-val="chi">Chi-Square Test</button>
+          <button class="arena-opt" data-val="corr">Pearson / Spearman Correlation</button>
+          <button class="arena-opt" data-val="ttest">Two-Sample T-Test</button>
+          <button class="arena-opt" data-val="anova">One-Way ANOVA</button>
+        </div>
+        <div class="arena-feedback"></div>
+        <button class="arena-code-btn">&#128065; View Python Code Recipe</button>
+        <div class="arena-code-box">
+          <div class="code-block"><pre><code>from scipy import stats
+# Continuous vs Continuous association
+stats.pearsonr(experience, salary)  # Linear
+stats.spearmanr(experience, salary) # Rank / Outlier resistant</code></pre></div>
+        </div>
+      </div>
+
+      <!-- Scenario 6 -->
+      <div class="arena-card" data-correct="chi">
+        <div class="arena-badge" style="background:var(--accent-soft);color:var(--accent);">Scenario 6 &bull; Loan Default vs EMI Affordability</div>
+        <div class="arena-scenario">A risk analyst investigates if <strong>Loan Status (Default vs Non-Default)</strong> is statistically dependent on <strong>Ability to Pay EMI (Yes vs No)</strong>.</div>
+        <div class="arena-question">Which test for two categorical features?</div>
+        <div class="arena-options">
+          <button class="arena-opt" data-val="ttest">Two-Sample T-Test</button>
+          <button class="arena-opt" data-val="chi">Chi-Square Test of Independence</button>
+          <button class="arena-opt" data-val="anova">One-Way ANOVA</button>
+          <button class="arena-opt" data-val="ks">KS-Test</button>
+        </div>
+        <div class="arena-feedback"></div>
+        <button class="arena-code-btn">&#128065; View Python Code Recipe</button>
+        <div class="arena-code-box">
+          <div class="code-block"><pre><code>from scipy import stats
+import pandas as pd
+# Contingency between two categorical binary variables
+table = pd.crosstab(df['Loan_Status'], df['Able_to_pay_EMI'])
+stats.chi2_contingency(table)</code></pre></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 14. SCALER VIVA & TRAPS ==================== -->
+  <section class="panel" id="p-viva" hidden>
+    <h2>14. Scaler Viva &amp; Interview Gotchas (&quot;Golden Traps&quot;)</h2>
+    <p class="subtitle">The top 10 questions examiners and interviewers ask to test true conceptual mastery.</p>
+
+    <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;">
+      <div class="card" style="border-left:4px solid var(--hot);">
+        <h4 style="color:var(--hot);font-size:14px;margin-bottom:6px;">1. Never Say &quot;Accept H&#8320;&quot;</h4>
+        <p style="font-size:13px;color:var(--ink-dim);">
+          Failure to reject H&#8320; only means you lack sufficient evidence to disprove it under current sample noise. <em>&quot;Absence of evidence is not evidence of absence.&quot;</em>
+        </p>
+      </div>
+
+      <div class="card" style="border-left:4px solid var(--gold);">
+        <h4 style="color:var(--gold);font-size:14px;margin-bottom:6px;">2. The CI Overlap Fallacy</h4>
+        <p style="font-size:13px;color:var(--ink-dim);">
+          Two 95% Confidence Intervals can overlap by up to 29% and their difference can STILL be statistically significant (p &lt; 0.05). Why? Because SE_diff = &radic;(SE&#8321;&sup2; + SE&#8322;&sup2;) &le; SE&#8321; + SE&#8322;.
+        </p>
+      </div>
+
+      <div class="card" style="border-left:4px solid var(--accent);">
+        <h4 style="color:var(--accent);font-size:14px;margin-bottom:6px;">3. The Data Leakage Crime</h4>
+        <p style="font-size:13px;color:var(--ink-dim);">
+          Never run <code>scaler.fit(df)</code> or <code>imputer.fit(df)</code> on the whole dataset. Always split into train/test first, fit on train only, and transform test!
+        </p>
+      </div>
+
+      <div class="card" style="border-left:4px solid var(--blue);">
+        <h4 style="color:var(--blue);font-size:14px;margin-bottom:6px;">4. The Dummy Variable Trap</h4>
+        <p style="font-size:13px;color:var(--ink-dim);">
+          When One-Hot Encoding a category with k levels for Linear Regression, always set <code>drop_first=True</code> (k-1 columns), or multicollinearity causes matrix singularity!
+        </p>
+      </div>
+
+      <div class="card" style="border-left:4px solid var(--purple);">
+        <h4 style="color:var(--purple);font-size:14px;margin-bottom:6px;">5. Diagnostic P-Value Reversal</h4>
+        <p style="font-size:13px;color:var(--ink-dim);">
+          In diagnostic tests (Shapiro-Wilk, Levene), H&#8320; is what you WANT (data is normal, variances equal). Thus, you want <strong>p &gt; 0.05</strong> to proceed with parametric tests!
+        </p>
+      </div>
+
+      <div class="card" style="border-left:4px solid var(--hot);">
+        <h4 style="color:var(--hot);font-size:14px;margin-bottom:6px;">6. Large Sample P-Value Delusion</h4>
+        <p style="font-size:13px;color:var(--ink-dim);">
+          With 500,000 rows (Walmart), even a $0.05 spend difference gives p &lt; 0.001. Always report effect sizes (Cohen's d or Cram&eacute;r's V) to prove economic significance!
+        </p>
+      </div>
+
+      <div class="card" style="border-left:4px solid var(--gold);">
+        <h4 style="color:var(--gold);font-size:14px;margin-bottom:6px;">7. Cochran's Condition Violation</h4>
+        <p style="font-size:13px;color:var(--ink-dim);">
+          Chi-Square requires all expected frequencies E_ij &ge; 1 and &le; 20% &lt; 5. In Yulu, Weather=4 had only 1 observation. If unhandled, the test is mathematically invalid.
+        </p>
+      </div>
+
+      <div class="card" style="border-left:4px solid var(--accent);">
+        <h4 style="color:var(--accent);font-size:14px;margin-bottom:6px;">8. The A/B Test Peeking Trap</h4>
+        <p style="font-size:13px;color:var(--ink-dim);">
+          Checking p-values continuously and stopping the experiment early as soon as p &lt; 0.05 inflates Type I false alarm rate from 5% to over 30%! Always wait for the pre-calculated sample size.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Footer Navigation -->
+  <div class="nav-footer" id="navFooter"></div>
+
+  <div class="privacy-footer-banner">
+    <div>
+      <strong>&#128274; Data Privacy &amp; Offline Integrity:</strong> 100% Client-Side execution. Zero trackers, zero cookies, zero external API queries, zero server data storage. Safe to deploy and share publicly.
+    </div>
+    <div style="font-family:var(--font-mono);font-size:11.5px;">
+      Lightweight &bull; Instant Load &bull; Scalable to Infinite Concurrent Users
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  /* ----------------- State & Navigation ----------------- */
+  const modules = [
+    ["wizard", "Pick the Test"],
+    ["cases", "Case Studies Hub"],
+    ["basics", "1. Basics & Power"],
+    ["clt", "2. CLT & CI Overlap"],
+    ["z", "3. Z-Test & Proportions"],
+    ["t", "4. T-Test & Cohorts"],
+    ["ab", "5. A/B Testing & Sizing"],
+    ["chi", "6. Chi-Square & Cochran"],
+    ["anova", "7. ANOVA & Two-Way"],
+    ["adv", "8. Diagnostics & KW"],
+    ["ks", "9. KS-Test & CDFs"],
+    ["corr", "10. Correlation & Heatmaps"],
+    ["fe1", "11. FE 1: Impute & Outliers"],
+    ["fe2", "12. FE 2: Encodings & Scalers"],
+    ["arena", "13. Problem Solving Arena"],
+    ["viva", "14. Scaler Viva & Traps"]
+  ];
+
+  const strip = document.getElementById('topicStrip');
+  const navFooter = document.getElementById('navFooter');
+  const tabElements = {};
+  const panels = {};
+
+  modules.forEach(([id, title]) => {
+    panels[id] = document.getElementById('p-' + id);
+    const btn = document.createElement('button');
+    btn.className = 'tab';
+    btn.type = 'button';
+    btn.textContent = title;
+    btn.setAttribute('role', 'tab');
+    btn.addEventListener('click', () => switchTab(id));
+    strip.appendChild(btn);
+    tabElements[id] = btn;
+  });
+
+  function switchTab(id) {
+    let activeIdx = 0;
+    modules.forEach(([mid], idx) => {
+      const isActive = mid === id;
+      if (isActive) activeIdx = idx;
+      if (panels[mid]) panels[mid].hidden = !isActive;
+      if (tabElements[mid]) tabElements[mid].setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    try { tabElements[id].scrollIntoView({ inline: 'center', block: 'nearest' }); } catch(e){}
+
+    // Update Footer Buttons
+    navFooter.innerHTML = '';
+    if (activeIdx > 0) {
+      const prevBtn = document.createElement('button');
+      prevBtn.className = 'nav-btn';
+      prevBtn.innerHTML = `&larr; ${modules[activeIdx - 1][1]}`;
+      prevBtn.onclick = () => switchTab(modules[activeIdx - 1][0]);
+      navFooter.appendChild(prevBtn);
+    }
+    if (activeIdx < modules.length - 1) {
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'nav-btn';
+      nextBtn.innerHTML = `${modules[activeIdx + 1][1]} &rarr;`;
+      nextBtn.onclick = () => switchTab(modules[activeIdx + 1][0]);
+      navFooter.appendChild(nextBtn);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    requestAnimationFrame(() => renderActiveCanvases(id));
+  }
+
+  let initial = 'wizard';
+  try {
+    const hash = (location.hash || '').replace('#', '');
+    if (panels[hash]) initial = hash;
+  } catch(e){}
+  switchTab(initial);
+
+  /* ----------------- Theme Switcher ----------------- */
+  const themeBtn = document.getElementById('themeBtn');
+  const themeIcon = document.getElementById('themeIcon');
+  const themeText = document.getElementById('themeText');
+  let isDark = false;
+
+  function applyTheme(dark) {
+    isDark = dark;
+    if (dark) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeIcon.textContent = '☀️';
+      themeText.textContent = 'Light';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      themeIcon.textContent = '🌙';
+      themeText.textContent = 'Dark';
+    }
+    renderAllCanvases();
+  }
+
+  themeBtn.addEventListener('click', () => applyTheme(!isDark));
+
+  function getColors() {
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    return {
+      bg: dark ? '#0B1120' : '#FFFFFF',
+      surface: dark ? '#131C31' : '#FFFFFF',
+      ink: dark ? '#F1F5F9' : '#0F172A',
+      muted: dark ? '#94A3B8' : '#64748B',
+      line: dark ? '#22304E' : '#E2E8F0',
+      accent: dark ? '#14B8A6' : '#0D9488',
+      accentSoft: dark ? 'rgba(20, 184, 166, 0.2)' : 'rgba(13, 148, 136, 0.15)',
+      hot: dark ? '#FB7185' : '#E11D48',
+      hotSoft: dark ? 'rgba(251, 113, 133, 0.25)' : 'rgba(225, 29, 72, 0.18)',
+      blue: dark ? '#60A5FA' : '#2563EB',
+      blueSoft: dark ? 'rgba(96, 165, 250, 0.25)' : 'rgba(37, 99, 235, 0.18)',
+      gold: dark ? '#FBBF24' : '#D97706',
+      goldSoft: dark ? 'rgba(251, 191, 36, 0.25)' : 'rgba(217, 119, 6, 0.2)',
+      purple: dark ? '#A78BFA' : '#7C3AED'
+    };
+  }
+
+  /* ----------------- Case Studies Sub-Tabs ----------------- */
+  const btnYulu = document.getElementById('btn-case-yulu');
+  const btnWalmart = document.getElementById('btn-case-walmart');
+  const btnAerofit = document.getElementById('btn-case-aerofit');
+  const cardYulu = document.getElementById('case-content-yulu');
+  const cardWalmart = document.getElementById('case-content-walmart');
+  const cardAerofit = document.getElementById('case-content-aerofit');
+
+  function setCaseTab(tab) {
+    [btnYulu, btnWalmart, btnAerofit].forEach(b => b.classList.remove('active'));
+    [cardYulu, cardWalmart, cardAerofit].forEach(c => c.style.display = 'none');
+    if (tab === 'yulu') { btnYulu.classList.add('active'); cardYulu.style.display = 'block'; }
+    if (tab === 'walmart') { btnWalmart.classList.add('active'); cardWalmart.style.display = 'block'; }
+    if (tab === 'aerofit') { btnAerofit.classList.add('active'); cardAerofit.style.display = 'block'; }
+  }
+
+  btnYulu.onclick = () => setCaseTab('yulu');
+  btnWalmart.onclick = () => setCaseTab('walmart');
+  btnAerofit.onclick = () => setCaseTab('aerofit');
+
+  /* ----------------- Math Helpers ----------------- */
+  function normalPdf(x, mu = 0, sigma = 1) {
+    return Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2)) / (sigma * Math.sqrt(2 * Math.PI));
+  }
+  function normalCdf(x) {
+    const a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741, a4 = -1.453152027, a5 = 1.061405429, p = 0.3275911;
+    const sign = x < 0 ? -1 : 1;
+    x = Math.abs(x) / Math.sqrt(2.0);
+    const t = 1.0 / (1.0 + p * x);
+    const y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+    return 0.5 * (1.0 + sign * y);
+  }
+  function normalQuantile(p) {
+    if (p <= 0 || p >= 1) return 0;
+    const a = [-3.969683028665376e+01, 2.209460984245205e+02, -2.759285104469687e+02, 1.383577518672690e+02, -3.066479806614716e+01, 2.506628277459239e+00];
+    const b = [-5.447609879822406e+01, 1.615858368580409e+02, -1.556989798598866e+02, 6.680131188771972e+01, -1.328068155288572e+01];
+    const q = p < 0.5 ? p : 1 - p;
+    const r = Math.sqrt(-2 * Math.log(q));
+    let x = (((((a[0]*r+a[1])*r+a[2])*r+a[3])*r+a[4])*r+a[5]) / (((((b[0]*r+b[1])*r+b[2])*r+b[3])*r+b[4])*r+1);
+    return p < 0.5 ? -x : x;
+  }
+  function gamma(z) {
+    const g = 7;
+    const C = [0.99999999999980993, 676.5203681218851, -1259.1392167224028, 771.32342877765313, -176.61502916214059, 12.507343278686905, -0.13857109583659903, 9.9843695780195716e-6, 1.5056327351493116e-7];
+    if (z < 0.5) return Math.PI / (Math.sin(Math.PI * z) * gamma(1 - z));
+    z -= 1;
+    let base = C[0];
+    for (let i = 1; i < g + 2; i++) base += C[i] / (z + i);
+    const t = z + g + 0.5;
+    return Math.sqrt(2 * Math.PI) * Math.pow(t, (z + 0.5)) * Math.exp(-t) * base;
+  }
+  function tPdf(t, df) {
+    const num = gamma((df + 1) / 2);
+    const den = Math.sqrt(df * Math.PI) * gamma(df / 2);
+    return (num / den) * Math.pow(1 + (t * t) / df, -(df + 1) / 2);
+  }
+
+  /* ----------------- Canvas 1: Power & Tradeoff ----------------- */
+  const cvPower = document.getElementById('cv-power');
+  const slAlpha = document.getElementById('sl-alpha');
+  const slDelta = document.getElementById('sl-delta');
+  const lblAlpha = document.getElementById('lbl-alpha');
+  const lblDelta = document.getElementById('lbl-delta');
+  const valT1 = document.getElementById('val-t1');
+  const valT2 = document.getElementById('val-t2');
+  const valPow = document.getElementById('val-pow');
+  const powerBadge = document.getElementById('power-badge');
+
+  function drawPowerCanvas() {
+    if (!cvPower || panels['basics'].hidden) return;
+    const ctx = cvPower.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const w = cvPower.parentElement.clientWidth;
+    const h = 200;
+    cvPower.width = w * dpr; cvPower.height = h * dpr;
+    ctx.scale(dpr, dpr);
+
+    const c = getColors();
+    const alpha = parseFloat(slAlpha.value);
+    const delta = parseFloat(slDelta.value);
+    lblAlpha.textContent = alpha.toFixed(2);
+    lblDelta.textContent = delta.toFixed(1);
+
+    const xCrit = normalQuantile(1 - alpha);
+    const beta = normalCdf(xCrit - delta);
+    const power = 1 - beta;
+
+    valT1.textContent = (alpha * 100).toFixed(1) + '%';
+    valT2.textContent = (beta * 100).toFixed(1) + '%';
+    valPow.textContent = (power * 100).toFixed(1) + '%';
+
+    powerBadge.className = power >= 0.8 ? 'verdict-badge pass' : 'verdict-badge reject';
+    powerBadge.textContent = power >= 0.8 ? 'High Power (≥ 80%)' : 'Underpowered (< 80%)';
+
+    ctx.clearRect(0, 0, w, h);
+    const xMin = -3.5, xMax = 7.5;
+    const mapX = (x) => 30 + ((x - xMin) / (xMax - xMin)) * (w - 60);
+    const mapY = (y) => h - 28 - (y / 0.45) * (h - 55);
+
+    ctx.strokeStyle = c.line;
+    ctx.beginPath(); ctx.moveTo(25, h - 28); ctx.lineTo(w - 25, h - 28); ctx.stroke();
+
+    // Fill Beta
+    ctx.fillStyle = c.goldSoft;
+    ctx.beginPath(); ctx.moveTo(mapX(xMin), mapY(0));
+    for (let x = xMin; x <= xCrit; x += 0.05) ctx.lineTo(mapX(x), mapY(normalPdf(x, delta, 1)));
+    ctx.lineTo(mapX(xCrit), mapY(0)); ctx.fill();
+
+    // Fill Power
+    ctx.fillStyle = c.accentSoft;
+    ctx.beginPath(); ctx.moveTo(mapX(xCrit), mapY(0));
+    for (let x = xCrit; x <= xMax; x += 0.05) ctx.lineTo(mapX(x), mapY(normalPdf(x, delta, 1)));
+    ctx.lineTo(mapX(xMax), mapY(0)); ctx.fill();
+
+    // Fill Alpha
+    ctx.fillStyle = c.hotSoft;
+    ctx.beginPath(); ctx.moveTo(mapX(xCrit), mapY(0));
+    for (let x = xCrit; x <= 4.0; x += 0.05) ctx.lineTo(mapX(x), mapY(normalPdf(x, 0, 1)));
+    ctx.lineTo(mapX(4.0), mapY(0)); ctx.fill();
+
+    // Curves
+    ctx.strokeStyle = c.muted; ctx.lineWidth = 2; ctx.beginPath();
+    for (let x = xMin; x <= 4.0; x += 0.05) { const px = mapX(x), py = mapY(normalPdf(x, 0, 1)); if (x === xMin) ctx.moveTo(px, py); else ctx.lineTo(px, py); }
+    ctx.stroke();
+
+    ctx.strokeStyle = c.accent; ctx.lineWidth = 2.5; ctx.beginPath();
+    for (let x = -1.0; x <= xMax; x += 0.05) { const px = mapX(x), py = mapY(normalPdf(x, delta, 1)); if (x === -1.0) ctx.moveTo(px, py); else ctx.lineTo(px, py); }
+    ctx.stroke();
+
+    ctx.strokeStyle = c.hot; ctx.lineWidth = 2; ctx.setLineDash([4, 4]); ctx.beginPath();
+    ctx.moveTo(mapX(xCrit), 20); ctx.lineTo(mapX(xCrit), h - 28); ctx.stroke(); ctx.setLineDash([]);
+  }
+  slAlpha.addEventListener('input', drawPowerCanvas);
+  slDelta.addEventListener('input', drawPowerCanvas);
+
+  /* ----------------- Canvas 2: CLT & CI Overlap ----------------- */
+  const cvCltPop = document.getElementById('cv-clt-pop');
+  const cvCltMeans = document.getElementById('cv-clt-means');
+  const selCltPop = document.getElementById('sel-clt-pop');
+  const slCltN = document.getElementById('sl-clt-n');
+  const lblCltN = document.getElementById('lbl-clt-n');
+  const lblCltMu = document.getElementById('lbl-clt-mu');
+  const lblCltSigma = document.getElementById('lbl-clt-sigma');
+  const lblCltSe = document.getElementById('lbl-clt-se');
+  const lblCltStatus = document.getElementById('lbl-clt-status');
+
+  function drawCltCanvas() {
+    if (!cvCltPop || panels['clt'].hidden) return;
+    const c = getColors();
+    const dpr = window.devicePixelRatio || 1;
+    const n = parseInt(slCltN.value);
+    const popType = selCltPop.value;
+    lblCltN.textContent = n;
+
+    // Population parameters
+    let mu = 50, sigma = 25;
+    if (popType === 'skew') { mu = 40; sigma = 30; }
+    if (popType === 'uniform') { mu = 50; sigma = 28.8; }
+    if (popType === 'bimodal') { mu = 50; sigma = 26; }
+
+    const se = sigma / Math.sqrt(n);
+    lblCltMu.textContent = mu.toFixed(1);
+    lblCltSigma.textContent = sigma.toFixed(1);
+    lblCltSe.textContent = se.toFixed(2);
+
+    lblCltStatus.textContent = n >= 30 ? 'Gaussian (CLT Holds)' : (n >= 15 ? 'Approaching Normal' : 'Skewed / Non-Gaussian');
+    lblCltStatus.style.color = n >= 30 ? c.accent : (n >= 15 ? c.gold : c.hot);
+
+    // 1. Draw Population Canvas
+    const w1 = cvCltPop.parentElement.clientWidth - 20;
+    const h1 = 130;
+    cvCltPop.width = w1 * dpr; cvCltPop.height = h1 * dpr;
+    const ctx1 = cvCltPop.getContext('2d'); ctx1.scale(dpr, dpr);
+    ctx1.clearRect(0, 0, w1, h1);
+
+    ctx1.fillStyle = c.blueSoft;
+    ctx1.strokeStyle = c.blue;
+    ctx1.lineWidth = 2;
+    ctx1.beginPath();
+    ctx1.moveTo(20, h1 - 20);
+
+    for (let x = 0; x <= 100; x += 2) {
+      let y = 0;
+      if (popType === 'skew') y = Math.exp(-x / 25) * 4.2;
+      else if (popType === 'uniform') y = 1.0;
+      else if (popType === 'bimodal') y = (normalPdf(x, 28, 10) + normalPdf(x, 72, 10)) * 25;
+      const px = 20 + (x / 100) * (w1 - 40);
+      const py = h1 - 20 - (y / 4.5) * (h1 - 40);
+      ctx1.lineTo(px, py);
+    }
+    ctx1.lineTo(w1 - 20, h1 - 20);
+    ctx1.fill(); ctx1.stroke();
+
+    // 2. Draw Sample Means Canvas
+    const w2 = cvCltMeans.parentElement.clientWidth - 20;
+    const h2 = 130;
+    cvCltMeans.width = w2 * dpr; cvCltMeans.height = h2 * dpr;
+    const ctx2 = cvCltMeans.getContext('2d'); ctx2.scale(dpr, dpr);
+    ctx2.clearRect(0, 0, w2, h2);
+
+    ctx2.fillStyle = c.accentSoft;
+    ctx2.strokeStyle = c.accent;
+    ctx2.lineWidth = 2.5;
+    ctx2.beginPath();
+    ctx2.moveTo(20, h2 - 20);
+
+    for (let x = 0; x <= 100; x += 1) {
+      let val = normalPdf(x, mu, se);
+      const px = 20 + (x / 100) * (w2 - 40);
+      const py = h2 - 20 - (val / (normalPdf(mu, mu, se) * 1.15)) * (h2 - 40);
+      ctx2.lineTo(px, py);
+    }
+    ctx2.lineTo(w2 - 20, h2 - 20);
+    ctx2.fill(); ctx2.stroke();
+  }
+
+  selCltPop.addEventListener('change', drawCltCanvas);
+  slCltN.addEventListener('input', drawCltCanvas);
+
+  /* CI Overlap Canvas */
+  const cvCi = document.getElementById('cv-ci-overlap');
+  const slCiM1 = document.getElementById('sl-ci-m1');
+  const slCiSe1 = document.getElementById('sl-ci-se1');
+  const slCiM2 = document.getElementById('sl-ci-m2');
+  const slCiSe2 = document.getElementById('sl-ci-se2');
+  const lblCiM1 = document.getElementById('lbl-ci-m1');
+  const lblCiSe1 = document.getElementById('lbl-ci-se1');
+  const lblCiM2 = document.getElementById('lbl-ci-m2');
+  const lblCiSe2 = document.getElementById('lbl-ci-se2');
+  const lblCiDiff = document.getElementById('lbl-ci-diff');
+  const lblCiOverlapDist = document.getElementById('lbl-ci-overlap-dist');
+  const lblCiSediff = document.getElementById('lbl-ci-sediff');
+  const lblCiPval = document.getElementById('lbl-ci-pval');
+  const ciBadge = document.getElementById('ci-badge');
+
+  function drawCiCanvas() {
+    if (!cvCi || panels['clt'].hidden) return;
+    const ctx = cvCi.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const w = cvCi.parentElement.clientWidth;
+    const h = 140;
+    cvCi.width = w * dpr; cvCi.height = h * dpr;
+    ctx.scale(dpr, dpr);
+    const c = getColors();
+
+    const m1 = parseFloat(slCiM1.value);
+    const se1 = parseFloat(slCiSe1.value);
+    const m2 = parseFloat(slCiM2.value);
+    const se2 = parseFloat(slCiSe2.value);
+
+    lblCiM1.textContent = m1.toFixed(1);
+    lblCiSe1.textContent = se1.toFixed(1);
+    lblCiM2.textContent = m2.toFixed(1);
+    lblCiSe2.textContent = se2.toFixed(1);
+
+    const diff = Math.abs(m2 - m1);
+    lblCiDiff.textContent = diff.toFixed(1);
+
+    const ci1_low = m1 - 1.96 * se1, ci1_high = m1 + 1.96 * se1;
+    const ci2_low = m2 - 1.96 * se2, ci2_high = m2 + 1.96 * se2;
+
+    const overlap = Math.max(0, Math.min(ci1_high, ci2_high) - Math.max(ci1_low, ci2_low));
+    lblCiOverlapDist.textContent = overlap > 0 ? `Overlapping (${overlap.toFixed(1)} units)` : 'No Overlap';
+
+    const seDiff = Math.sqrt(se1 * se1 + se2 * se2);
+    lblCiSediff.textContent = seDiff.toFixed(2);
+
+    const zStat = diff / seDiff;
+    const pVal = 2 * (1 - normalCdf(zStat));
+    lblCiPval.textContent = pVal < 0.001 ? 'p < 0.001' : 'p = ' + pVal.toFixed(3);
+
+    if (overlap > 0 && pVal < 0.05) {
+      ciBadge.className = 'verdict-badge pass';
+      ciBadge.textContent = 'THE CLASSIC TRAP: Overlapping CIs, Yet p < 0.05 (Statistically Significant!)';
+    } else if (overlap === 0 && pVal < 0.05) {
+      ciBadge.className = 'verdict-badge pass';
+      ciBadge.textContent = 'Non-Overlapping CIs: Definitively Significant (p < 0.01)';
+    } else {
+      ciBadge.className = 'verdict-badge reject';
+      ciBadge.textContent = 'Heavy Overlap: Fail to Reject H0 (p ≥ 0.05)';
+    }
+
+    ctx.clearRect(0, 0, w, h);
+    const minX = 75, maxX = 135;
+    const mapX = (x) => 40 + ((x - minX) / (maxX - minX)) * (w - 80);
+
+    // Group 1 Error Bar
+    const y1 = 45;
+    ctx.strokeStyle = c.blue; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(mapX(ci1_low), y1); ctx.lineTo(mapX(ci1_high), y1); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(mapX(ci1_low), y1 - 8); ctx.lineTo(mapX(ci1_low), y1 + 8); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(mapX(ci1_high), y1 - 8); ctx.lineTo(mapX(ci1_high), y1 + 8); ctx.stroke();
+    ctx.fillStyle = c.blue; ctx.beginPath(); ctx.arc(mapX(m1), y1, 5, 0, Math.PI * 2); ctx.fill();
+    ctx.font = '600 12px ' + getComputedStyle(document.body).getPropertyValue('--font-mono');
+    ctx.fillText('Group A: ' + m1.toFixed(1), mapX(m1) - 30, y1 - 14);
+
+    // Group 2 Error Bar
+    const y2 = 95;
+    ctx.strokeStyle = c.accent; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(mapX(ci2_low), y2); ctx.lineTo(mapX(ci2_high), y2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(mapX(ci2_low), y2 - 8); ctx.lineTo(mapX(ci2_low), y2 + 8); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(mapX(ci2_high), y2 - 8); ctx.lineTo(mapX(ci2_high), y2 + 8); ctx.stroke();
+    ctx.fillStyle = c.accent; ctx.beginPath(); ctx.arc(mapX(m2), y2, 5, 0, Math.PI * 2); ctx.fill();
+    ctx.fillText('Group B: ' + m2.toFixed(1), mapX(m2) - 30, y2 + 24);
+
+    // Shaded Overlap Zone
+    if (overlap > 0) {
+      const oLeft = mapX(Math.max(ci1_low, ci2_low));
+      const oRight = mapX(Math.min(ci1_high, ci2_high));
+      ctx.fillStyle = c.goldSoft;
+      ctx.fillRect(oLeft, 25, oRight - oLeft, 80);
+      ctx.strokeStyle = c.gold; ctx.lineWidth = 1; ctx.strokeRect(oLeft, 25, oRight - oLeft, 80);
+    }
+  }
+
+  [slCiM1, slCiSe1, slCiM2, slCiSe2].forEach(el => el.addEventListener('input', drawCiCanvas));
+
+  /* ----------------- Canvas 3: Z-Test ----------------- */
+  const cvZtest = document.getElementById('cv-ztest');
+  const slZMu0 = document.getElementById('sl-z-mu0');
+  const slZXbar = document.getElementById('sl-z-xbar');
+  const slZSigma = document.getElementById('sl-z-sigma');
+  const slZN = document.getElementById('sl-z-n');
+  const lblZMu0 = document.getElementById('lbl-z-mu0');
+  const lblZXbar = document.getElementById('lbl-z-xbar');
+  const lblZSigma = document.getElementById('lbl-z-sigma');
+  const lblZN = document.getElementById('lbl-z-n');
+  const lblZSe = document.getElementById('lbl-z-se');
+  const lblZStat = document.getElementById('lbl-z-stat');
+  const lblZVal = document.getElementById('lbl-z-pval');
+  const zBadge = document.getElementById('z-badge');
+
+  function drawZCanvas() {
+    if (!cvZtest || panels['z'].hidden) return;
+    const ctx = cvZtest.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const w = cvZtest.parentElement.clientWidth;
+    const h = 210;
+    cvZtest.width = w * dpr; cvZtest.height = h * dpr;
+    ctx.scale(dpr, dpr);
+
+    const c = getColors();
+    const mu0 = parseFloat(slZMu0.value);
+    const xbar = parseFloat(slZXbar.value);
+    const sigma = parseFloat(slZSigma.value);
+    const n = parseFloat(slZN.value);
+    const tailRadio = document.querySelector('input[name="z-tail"]:checked');
+    const tailMode = tailRadio ? tailRadio.value : 'two';
+
+    lblZMu0.textContent = mu0; lblZXbar.textContent = xbar; lblZSigma.textContent = sigma; lblZN.textContent = n;
+    const se = sigma / Math.sqrt(n);
+    const zStat = (xbar - mu0) / se;
+    const pVal = tailMode === 'two' ? 2 * (1 - normalCdf(Math.abs(zStat))) : 1 - normalCdf(zStat);
+
+    lblZSe.textContent = se.toFixed(2);
+    lblZStat.textContent = zStat.toFixed(2);
+    lblZVal.textContent = pVal < 0.0001 ? 'p < 0.0001' : 'p = ' + pVal.toFixed(4);
+
+    if (pVal < 0.05) {
+      zBadge.className = 'verdict-badge pass';
+      zBadge.textContent = 'Reject H0: Significant Positive Marketing Effect (p < 0.05)';
+    } else {
+      zBadge.className = 'verdict-badge reject';
+      zBadge.textContent = 'Fail to Reject H0: Effect Not Distinguishable From Noise';
+    }
+
+    ctx.clearRect(0, 0, w, h);
+    const zMin = -3.8, zMax = 3.8;
+    const mapX = (z) => 30 + ((z - zMin) / (zMax - zMin)) * (w - 60);
+    const mapY = (y) => h - 25 - (y / 0.42) * (h - 50);
+
+    ctx.strokeStyle = c.line; ctx.beginPath(); ctx.moveTo(25, h - 25); ctx.lineTo(w - 25, h - 25); ctx.stroke();
+
+    // Shading
+    ctx.fillStyle = c.accentSoft;
+    ctx.beginPath();
+    if (tailMode === 'two') {
+      const absZ = Math.min(3.8, Math.max(0.1, Math.abs(zStat)));
+      ctx.moveTo(mapX(absZ), mapY(0));
+      for (let z = absZ; z <= zMax; z += 0.05) ctx.lineTo(mapX(z), mapY(normalPdf(z)));
+      ctx.lineTo(mapX(zMax), mapY(0)); ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(mapX(-zMax), mapY(0));
+      for (let z = -zMax; z <= -absZ; z += 0.05) ctx.lineTo(mapX(z), mapY(normalPdf(z)));
+      ctx.lineTo(mapX(-absZ), mapY(0)); ctx.fill();
+    } else {
+      const clampZ = Math.min(3.8, Math.max(-3.8, zStat));
+      ctx.moveTo(mapX(clampZ), mapY(0));
+      for (let z = clampZ; z <= zMax; z += 0.05) ctx.lineTo(mapX(z), mapY(normalPdf(z)));
+      ctx.lineTo(mapX(zMax), mapY(0)); ctx.fill();
+    }
+
+    // Bell Curve
+    ctx.strokeStyle = c.accent; ctx.lineWidth = 2.5; ctx.beginPath();
+    for (let z = zMin; z <= zMax; z += 0.05) {
+      const px = mapX(z), py = mapY(normalPdf(z));
+      if (z === zMin) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.stroke();
+
+    // Vertical line at zStat
+    const zDraw = Math.min(3.7, Math.max(-3.7, zStat));
+    ctx.strokeStyle = c.hot; ctx.lineWidth = 2; ctx.beginPath();
+    ctx.moveTo(mapX(zDraw), 15); ctx.lineTo(mapX(zDraw), h - 25); ctx.stroke();
+  }
+
+  [slZMu0, slZXbar, slZSigma, slZN].forEach(el => el.addEventListener('input', drawZCanvas));
+  document.querySelectorAll('input[name="z-tail"]').forEach(el => el.addEventListener('change', drawZCanvas));
+
+  /* ----------------- Canvas 4: Student-t Morph ----------------- */
+  const cvTtest = document.getElementById('cv-ttest');
+  const slTDf = document.getElementById('sl-t-df');
+  const lblTDf = document.getElementById('lbl-t-df');
+  const lblTKurt = document.getElementById('lbl-t-kurt');
+  const lblTCrit = document.getElementById('lbl-t-crit');
+  const tBadge = document.getElementById('t-badge');
+
+  function drawTCanvas() {
+    if (!cvTtest || panels['t'].hidden) return;
+    const ctx = cvTtest.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const w = cvTtest.parentElement.clientWidth;
+    const h = 210;
+    cvTtest.width = w * dpr; cvTtest.height = h * dpr;
+    ctx.scale(dpr, dpr);
+    const c = getColors();
+
+    const df = parseInt(slTDf.value);
+    lblTDf.textContent = df;
+    lblTKurt.textContent = df >= 30 ? 'Near Zero (Gaussian)' : (df > 5 ? 'Moderate' : 'Heavy (Fat Tails)');
+    lblTCrit.textContent = df >= 30 ? '±1.98' : (df === 1 ? '±12.71' : (df === 4 ? '±2.78' : '±' + (2.0 + 3.0 / df).toFixed(2)));
+
+    if (df >= 30) {
+      tBadge.className = 'verdict-badge pass';
+      tBadge.textContent = 'Morphed into Normal Curve (df ≥ 30)';
+    } else {
+      tBadge.className = 'verdict-badge reject';
+      tBadge.textContent = 'Heavy Tails: Extreme Outliers Far More Likely';
+    }
+
+    ctx.clearRect(0, 0, w, h);
+    const tMin = -4.0, tMax = 4.0;
+    const mapX = (t) => 30 + ((t - tMin) / (tMax - tMin)) * (w - 60);
+    const mapY = (y) => h - 25 - (y / 0.42) * (h - 50);
+
+    // Normal Reference Curve (Dashed)
+    ctx.strokeStyle = c.muted; ctx.setLineDash([4, 4]); ctx.lineWidth = 1.8; ctx.beginPath();
+    for (let t = tMin; t <= tMax; t += 0.05) {
+      const px = mapX(t), py = mapY(normalPdf(t));
+      if (t === tMin) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.stroke(); ctx.setLineDash([]);
+
+    // Student's t Curve
+    ctx.strokeStyle = c.hot; ctx.lineWidth = 2.5; ctx.beginPath();
+    for (let t = tMin; t <= tMax; t += 0.05) {
+      const px = mapX(t), py = mapY(tPdf(t, df));
+      if (t === tMin) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.stroke();
+  }
+  slTDf.addEventListener('input', drawTCanvas);
+
+  /* ----------------- Canvas 5: A/B Testing ----------------- */
+  const cvAb = document.getElementById('cv-ab');
+  const slAbBase = document.getElementById('sl-ab-base');
+  const slAbLift = document.getElementById('sl-ab-lift');
+  const slAbN = document.getElementById('sl-ab-n');
+  const lblAbBase = document.getElementById('lbl-ab-base');
+  const lblAbLift = document.getElementById('lbl-ab-lift');
+  const lblAbN = document.getElementById('lbl-ab-n');
+  const lblAbCval = document.getElementById('lbl-ab-cval');
+  const lblAbTval = document.getElementById('lbl-ab-tval');
+  const lblAbReqN = document.getElementById('lbl-ab-reqn');
+  const lblAbPval = document.getElementById('lbl-ab-pval');
+  const abBadge = document.getElementById('ab-badge');
+
+  function updateAbTest() {
+    if (!cvAb || panels['ab'].hidden) return;
+    const p1 = parseFloat(slAbBase.value) / 100.0;
+    const liftPct = parseFloat(slAbLift.value);
+    const n = parseInt(slAbN.value);
+
+    lblAbBase.textContent = (p1 * 100).toFixed(1) + '%';
+    lblAbLift.textContent = '+' + liftPct + '%';
+    lblAbN.textContent = n.toLocaleString();
+
+    const p2 = p1 * (1 + liftPct / 100.0);
+    lblAbCval.textContent = (p1 * 100).toFixed(1) + '%';
+    lblAbTval.textContent = (p2 * 100).toFixed(1) + '%';
+
+    // Sample size formula for proportions (Power = 80%, Alpha = 5%)
+    // n = 2 * (1.96 + 0.84)^2 * p * (1-p) / delta^2
+    const delta = p2 - p1;
+    const pAvg = (p1 + p2) / 2;
+    const reqN = Math.round((2 * Math.pow(1.96 + 0.8416, 2) * pAvg * (1 - pAvg)) / Math.pow(delta, 2));
+    lblAbReqN.textContent = reqN.toLocaleString();
+
+    const seDiff = Math.sqrt((p1 * (1 - p1)) / n + (p2 * (1 - p2)) / n);
+    const zStat = delta / seDiff;
+    const pVal = 2 * (1 - normalCdf(zStat));
+
+    lblAbPval.textContent = pVal < 0.0001 ? 'p < 0.0001' : 'p = ' + pVal.toFixed(4);
+
+    if (n >= reqN && pVal < 0.05) {
+      abBadge.className = 'verdict-badge pass';
+      abBadge.textContent = 'Adequately Powered & Significant Lift (Safe to Ship)';
+    } else if (pVal < 0.05) {
+      abBadge.className = 'verdict-badge pass';
+      abBadge.textContent = 'Significant Lift (Caution: Peeking Risk if Sample Early)';
+    } else {
+      abBadge.className = 'verdict-badge reject';
+      abBadge.textContent = 'Underpowered or Inconclusive (Do Not Ship Yet)';
+    }
+
+    // Draw A/B Canvas
+    const ctx = cvAb.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const w = cvAb.parentElement.clientWidth;
+    const h = 150;
+    cvAb.width = w * dpr; cvAb.height = h * dpr;
+    ctx.scale(dpr, dpr);
+    const c = getColors();
+
+    ctx.clearRect(0, 0, w, h);
+    const mapX = (val) => 40 + ((val - (p1 * 0.5)) / (p2 * 1.5 - p1 * 0.5)) * (w - 80);
+
+    // Control Distribution
+    const se1 = Math.sqrt((p1 * (1 - p1)) / n);
+    ctx.fillStyle = c.blueSoft; ctx.strokeStyle = c.blue; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(30, h - 25);
+    for (let x = p1 * 0.5; x <= p2 * 1.5; x += (p2 * 1.5 - p1 * 0.5) / 100) {
+      const py = h - 25 - (normalPdf(x, p1, se1) / (normalPdf(p1, p1, se1) * 1.2)) * (h - 45);
+      ctx.lineTo(mapX(x), py);
+    }
+    ctx.stroke();
+
+    // Treatment Distribution
+    const se2 = Math.sqrt((p2 * (1 - p2)) / n);
+    ctx.fillStyle = c.accentSoft; ctx.strokeStyle = c.accent; ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.moveTo(30, h - 25);
+    for (let x = p1 * 0.5; x <= p2 * 1.5; x += (p2 * 1.5 - p1 * 0.5) / 100) {
+      const py = h - 25 - (normalPdf(x, p2, se2) / (normalPdf(p2, p2, se2) * 1.2)) * (h - 45);
+      ctx.lineTo(mapX(x), py);
+    }
+    ctx.stroke();
+  }
+
+  [slAbBase, slAbLift, slAbN].forEach(el => el.addEventListener('input', updateAbTest));
+
+  /* ----------------- Chi-Square Matrix ----------------- */
+  const o11 = document.getElementById('ct-o11');
+  const o12 = document.getElementById('ct-o12');
+  const o21 = document.getElementById('ct-o21');
+  const o22 = document.getElementById('ct-o22');
+  const r1 = document.getElementById('ct-r1');
+  const r2 = document.getElementById('ct-r2');
+  const c1 = document.getElementById('ct-c1');
+  const c2 = document.getElementById('ct-c2');
+  const tot = document.getElementById('ct-total');
+  const lblChiStat = document.getElementById('lbl-chi-stat');
+  const lblChiPval = document.getElementById('lbl-chi-pval');
+  const lblCochran = document.getElementById('lbl-cochran-status');
+  const chiBadge = document.getElementById('chi-badge');
+
+  function updateChiSquare() {
+    const a = parseFloat(o11.value) || 0;
+    const b = parseFloat(o12.value) || 0;
+    const cVal = parseFloat(o21.value) || 0;
+    const d = parseFloat(o22.value) || 0;
+
+    const row1 = a + b, row2 = cVal + d;
+    const col1 = a + cVal, col2 = b + d;
+    const total = row1 + row2;
+
+    r1.textContent = row1; r2.textContent = row2;
+    c1.textContent = col1; c2.textContent = col2;
+    tot.textContent = total;
+
+    if (total === 0 || row1 === 0 || row2 === 0 || col1 === 0 || col2 === 0) return;
+
+    const e11 = (row1 * col1) / total;
+    const e12 = (row1 * col2) / total;
+    const e21 = (row2 * col1) / total;
+    const e22 = (row2 * col2) / total;
+
+    const chiStat = Math.pow(a - e11, 2) / e11 + Math.pow(b - e12, 2) / e12 +
+                    Math.pow(cVal - e21, 2) / e21 + Math.pow(d - e22, 2) / e22;
+
+    const pVal = 1 - normalCdf(Math.sqrt(chiStat));
+    lblChiStat.textContent = chiStat.toFixed(2);
+    lblChiPval.textContent = pVal < 0.0001 ? 'p < 0.0001' : 'p = ' + (pVal * 2).toFixed(4);
+
+    const minE = Math.min(e11, e12, e21, e22);
+    if (minE >= 5) {
+      lblCochran.textContent = 'Pass (All E ≥ 5)';
+      lblCochran.style.color = getColors().accent;
+    } else {
+      lblCochran.textContent = `Violated (Min E = ${minE.toFixed(1)} < 5)`;
+      lblCochran.style.color = getColors().hot;
+    }
+
+    if (chiStat > 3.84) {
+      chiBadge.className = 'verdict-badge pass';
+      chiBadge.textContent = 'Significant Association (Reject Independence)';
+    } else {
+      chiBadge.className = 'verdict-badge reject';
+      chiBadge.textContent = 'Fail to Reject: Variables Independent';
+    }
+  }
+
+  [o11, o12, o21, o22].forEach(el => el.addEventListener('input', updateChiSquare));
+
+  /* ----------------- Canvas 6: ANOVA ----------------- */
+  const cvAnova = document.getElementById('cv-anova');
+  const slAg1 = document.getElementById('sl-a-g1');
+  const slAg2 = document.getElementById('sl-a-g2');
+  const slAg3 = document.getElementById('sl-a-g3');
+  const slAnoise = document.getElementById('sl-a-noise');
+  const lblAg1 = document.getElementById('lbl-a-g1');
+  const lblAg2 = document.getElementById('lbl-a-g2');
+  const lblAg3 = document.getElementById('lbl-a-g3');
+  const lblAnoise = document.getElementById('lbl-a-noise');
+  const lblAfstat = document.getElementById('lbl-a-fstat');
+  const lblApval = document.getElementById('lbl-a-pval');
+  const anovaBadge = document.getElementById('anova-badge');
+
+  function drawAnovaCanvas() {
+    if (!cvAnova || panels['anova'].hidden) return;
+    const ctx = cvAnova.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const w = cvAnova.parentElement.clientWidth;
+    const h = 200;
+    cvAnova.width = w * dpr; cvAnova.height = h * dpr;
+    ctx.scale(dpr, dpr);
+    const c = getColors();
+
+    const g1 = parseFloat(slAg1.value);
+    const g2 = parseFloat(slAg2.value);
+    const g3 = parseFloat(slAg3.value);
+    const noise = parseFloat(slAnoise.value);
+
+    lblAg1.textContent = g1; lblAg2.textContent = g2; lblAg3.textContent = g3; lblAnoise.textContent = noise.toFixed(1);
+
+    const grand = (g1 + g2 + g3) / 3.0;
+    const n = 30;
+    const msBetween = n * (Math.pow(g1 - grand, 2) + Math.pow(g2 - grand, 2) + Math.pow(g3 - grand, 2)) / 2;
+    const msWithin = Math.pow(noise, 2);
+    const fStat = Math.max(0.1, msBetween / msWithin);
+
+    lblAfstat.textContent = fStat.toFixed(2);
+    lblApval.textContent = fStat > 3.1 ? (fStat > 10 ? 'p < 0.001' : 'p < 0.05') : 'p ≥ 0.05';
+
+    if (fStat > 3.1) {
+      anovaBadge.className = 'verdict-badge pass';
+      anovaBadge.textContent = 'Significant Difference in Means (Reject H0)';
+    } else {
+      anovaBadge.className = 'verdict-badge reject';
+      anovaBadge.textContent = 'Within-Group Noise Dominates (Fail to Reject H0)';
+    }
+
+    ctx.clearRect(0, 0, w, h);
+    const xMin = 20, xMax = 80;
+    const mapX = (x) => 30 + ((x - xMin) / (xMax - xMin)) * (w - 60);
+    const mapY = (y) => h - 25 - (y / 0.15) * (h - 50);
+
+    const colors = [c.blue, c.accent, c.purple];
+    [g1, g2, g3].forEach((m, idx) => {
+      ctx.strokeStyle = colors[idx]; ctx.lineWidth = 2.5; ctx.beginPath();
+      for (let x = xMin; x <= xMax; x += 0.5) {
+        const py = mapY(normalPdf(x, m, noise));
+        if (x === xMin) ctx.moveTo(mapX(x), py); else ctx.lineTo(mapX(x), py);
+      }
+      ctx.stroke();
+    });
+  }
+
+  [slAg1, slAg2, slAg3, slAnoise].forEach(el => el.addEventListener('input', drawAnovaCanvas));
+
+  /* Two-Way Interaction Canvas */
+  const cvInteract = document.getElementById('cv-interact');
+  const slInteract = document.getElementById('sl-interact');
+  const lblInteract = document.getElementById('lbl-interact-val');
+  const interactBadge = document.getElementById('interact-badge');
+
+  function drawInteractCanvas() {
+    if (!cvInteract || panels['anova'].hidden) return;
+    const ctx = cvInteract.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const w = cvInteract.parentElement.clientWidth;
+    const h = 180;
+    cvInteract.width = w * dpr; cvInteract.height = h * dpr;
+    ctx.scale(dpr, dpr);
+    const c = getColors();
+
+    const intensity = parseFloat(slInteract.value);
+    lblInteract.textContent = intensity === 0 ? '0.0 (Parallel Lines)' : (intensity > 0 ? `+${intensity} (Crossing Lines)` : `${intensity} (Diverging)`);
+
+    if (Math.abs(intensity) > 10) {
+      interactBadge.className = 'verdict-badge pass';
+      interactBadge.textContent = 'Lines Crossing/Diverging: Significant Interaction Effect!';
+    } else {
+      interactBadge.className = 'verdict-badge reject';
+      interactBadge.textContent = 'Lines Parallel: Main Effects Only (No Interaction)';
+    }
+
+    ctx.clearRect(0, 0, w, h);
+    const yOrangeUrban = 40, yOrangeRural = 90;
+    const yLemonUrban = 70, yLemonRural = 120 + intensity;
+
+    const x1 = w * 0.25, x2 = w * 0.75;
+
+    // Orange Line
+    ctx.strokeStyle = c.gold; ctx.lineWidth = 3; ctx.beginPath();
+    ctx.moveTo(x1, yOrangeUrban); ctx.lineTo(x2, yOrangeRural); ctx.stroke();
+    ctx.fillStyle = c.gold; ctx.beginPath(); ctx.arc(x1, yOrangeUrban, 5, 0, Math.PI * 2); ctx.arc(x2, yOrangeRural, 5, 0, Math.PI * 2); ctx.fill();
+
+    // Lemon Line
+    ctx.strokeStyle = c.blue; ctx.lineWidth = 3; ctx.beginPath();
+    ctx.moveTo(x1, yLemonUrban); ctx.lineTo(x2, yLemonRural); ctx.stroke();
+    ctx.fillStyle = c.blue; ctx.beginPath(); ctx.arc(x1, yLemonUrban, 5, 0, Math.PI * 2); ctx.arc(x2, yLemonRural, 5, 0, Math.PI * 2); ctx.fill();
+
+    ctx.font = '600 12px ' + getComputedStyle(document.body).getPropertyValue('--font-mono');
+    ctx.fillStyle = c.gold; ctx.fillText('Orange Flavour', x2 + 10, yOrangeRural + 4);
+    ctx.fillStyle = c.blue; ctx.fillText('Lemon Flavour', x2 + 10, yLemonRural + 4);
+
+    ctx.fillStyle = c.muted;
+    ctx.fillText('Urban Location', x1 - 40, h - 10);
+    ctx.fillText('Rural Location', x2 - 40, h - 10);
+  }
+  slInteract.addEventListener('input', drawInteractCanvas);
+
+  /* ----------------- Canvas 7: Q-Q Plot ----------------- */
+  const cvQq = document.getElementById('cv-qq');
+  const selQq = document.getElementById('sel-qq-shape');
+  const qqBadge = document.getElementById('qq-badge');
+  const lblShapiro = document.getElementById('lbl-shapiro-res');
+  const lblRoute = document.getElementById('lbl-route-res');
+
+  function drawQqCanvas() {
+    if (!cvQq || panels['adv'].hidden) return;
+    const ctx = cvQq.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const w = cvQq.parentElement.clientWidth;
+    const h = 210;
+    cvQq.width = w * dpr; cvQq.height = h * dpr;
+    ctx.scale(dpr, dpr);
+    const c = getColors();
+
+    const shape = selQq.value;
+    ctx.clearRect(0, 0, w, h);
+
+    if (shape === 'normal') {
+      qqBadge.className = 'verdict-badge pass';
+      qqBadge.textContent = 'Normality Satisfied: Points Hug Diagonal';
+      lblShapiro.textContent = 'p > 0.05 (Assume Normal)';
+      lblRoute.textContent = 'Parametric ANOVA / T-Test';
+    } else {
+      qqBadge.className = 'verdict-badge reject';
+      qqBadge.textContent = 'Normality Violated: Curving Deviation';
+      lblShapiro.textContent = 'p ≤ 0.05 (Reject Normality)';
+      lblRoute.textContent = 'Non-Parametric Kruskal-Wallis / Mann-Whitney';
+    }
+
+    const size = Math.min(w - 80, h - 40);
+    const startX = (w - size) / 2;
+    const startY = (h - size) / 2;
+
+    ctx.strokeStyle = c.line; ctx.strokeRect(startX, startY, size, size);
+
+    // 45-degree Reference Line
+    ctx.strokeStyle = c.muted; ctx.setLineDash([4, 4]); ctx.beginPath();
+    ctx.moveTo(startX, startY + size); ctx.lineTo(startX + size, startY); ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Plot Points
+    ctx.fillStyle = c.accent;
+    const nPts = 35;
+    for (let i = 1; i <= nPts; i++) {
+      const qNorm = normalQuantile(i / (nPts + 1));
+      let qSample = qNorm;
+      if (shape === 'skew') qSample = Math.pow(qNorm + 2.5, 1.8) - 4.5;
+      if (shape === 'heavy') qSample = Math.sign(qNorm) * Math.pow(Math.abs(qNorm), 1.6);
+
+      const px = startX + size / 2 + (qNorm / 3.0) * (size / 2);
+      const py = startY + size / 2 - (qSample / 3.0) * (size / 2);
+      ctx.beginPath(); ctx.arc(px, py, 3.5, 0, Math.PI * 2); ctx.fill();
+    }
+  }
+  selQq.addEventListener('change', drawQqCanvas);
+
+  /* ----------------- Canvas 8: KS-Test Empirical CDFs ----------------- */
+  const cvKs = document.getElementById('cv-ks');
+  const slKsShift = document.getElementById('sl-ks-shift');
+  const slKsSpread = document.getElementById('sl-ks-spread');
+  const lblKsShift = document.getElementById('lbl-ks-shift');
+  const lblKsSpread = document.getElementById('lbl-ks-spread');
+  const lblKsDstat = document.getElementById('lbl-ks-dstat');
+  const lblKsDcrit = document.getElementById('lbl-ks-dcrit');
+  const lblKsPval = document.getElementById('lbl-ks-pval');
+  const ksBadge = document.getElementById('ks-badge');
+
+  function drawKsCanvas() {
+    if (!cvKs || panels['ks'].hidden) return;
+    const ctx = cvKs.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const w = cvKs.parentElement.clientWidth;
+    const h = 200;
+    cvKs.width = w * dpr; cvKs.height = h * dpr;
+    ctx.scale(dpr, dpr);
+    const c = getColors();
+
+    const shift = parseFloat(slKsShift.value);
+    const spread = parseFloat(slKsSpread.value);
+    lblKsShift.textContent = shift.toFixed(1);
+    lblKsSpread.textContent = spread.toFixed(1);
+
+    // Compute empirical CDFs over x in [-4, 4]
+    const xMin = -4.0, xMax = 4.0;
+    let maxD = 0, bestX = 0;
+
+    for (let x = xMin; x <= xMax; x += 0.05) {
+      const f1 = normalCdf(x);
+      const f2 = normalCdf((x - shift) / spread);
+      const d = Math.abs(f1 - f2);
+      if (d > maxD) { maxD = d; bestX = x; }
+    }
+
+    lblKsDstat.textContent = maxD.toFixed(3);
+    const dCrit = 0.192; // n1=100, n2=100 critical threshold
+    lblKsDcrit.textContent = dCrit.toFixed(3);
+
+    const zKs = maxD * Math.sqrt((100 * 100) / 200);
+    const pKs = 2 * Math.exp(-2 * zKs * zKs);
+    lblKsPval.textContent = pKs < 0.001 ? 'p < 0.001' : 'p = ' + pKs.toFixed(3);
+
+    if (maxD > dCrit) {
+      ksBadge.className = 'verdict-badge pass';
+      ksBadge.textContent = 'Distributions Significantly Differ (Reject H0, p < 0.05)';
+    } else {
+      ksBadge.className = 'verdict-badge reject';
+      ksBadge.textContent = 'Distributions Consistent (Fail to Reject H0)';
+    }
+
+    ctx.clearRect(0, 0, w, h);
+    const mapX = (x) => 40 + ((x - xMin) / (xMax - xMin)) * (w - 80);
+    const mapY = (cdf) => h - 25 - cdf * (h - 50);
+
+    // Axis
+    ctx.strokeStyle = c.line; ctx.beginPath(); ctx.moveTo(35, h - 25); ctx.lineTo(w - 35, h - 25); ctx.stroke();
+
+    // CDF 1 (Sample 1)
+    ctx.strokeStyle = c.blue; ctx.lineWidth = 2.5; ctx.beginPath();
+    for (let x = xMin; x <= xMax; x += 0.05) {
+      const px = mapX(x), py = mapY(normalCdf(x));
+      if (x === xMin) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.stroke();
+
+    // CDF 2 (Sample 2)
+    ctx.strokeStyle = c.accent; ctx.lineWidth = 2.5; ctx.beginPath();
+    for (let x = xMin; x <= xMax; x += 0.05) {
+      const px = mapX(x), py = mapY(normalCdf((x - shift) / spread));
+      if (x === xMin) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.stroke();
+
+    // Draw Maximum Vertical Divergence Arrow
+    const pxBest = mapX(bestX);
+    const py1 = mapY(normalCdf(bestX));
+    const py2 = mapY(normalCdf((bestX - shift) / spread));
+    ctx.strokeStyle = c.hot; ctx.lineWidth = 2.5; ctx.beginPath();
+    ctx.moveTo(pxBest, py1); ctx.lineTo(pxBest, py2); ctx.stroke();
+
+    ctx.fillStyle = c.hot;
+    ctx.beginPath(); ctx.arc(pxBest, py1, 4, 0, Math.PI * 2); ctx.arc(pxBest, py2, 4, 0, Math.PI * 2); ctx.fill();
+    ctx.font = '700 12px ' + getComputedStyle(document.body).getPropertyValue('--font-mono');
+    ctx.fillText('D = ' + maxD.toFixed(3), pxBest + 8, (py1 + py2) / 2);
+  }
+
+  slKsShift.addEventListener('input', drawKsCanvas);
+  slKsSpread.addEventListener('input', drawKsCanvas);
+
+  /* ----------------- Canvas 9: Correlation ----------------- */
+  const cvCorr = document.getElementById('cv-corr');
+  const slCorrR = document.getElementById('sl-corr-r');
+  const chkOutlier = document.getElementById('chk-outlier');
+  const lblCorrR = document.getElementById('lbl-corr-r');
+  const lblPearson = document.getElementById('lbl-pearson');
+  const lblSpearman = document.getElementById('lbl-spearman');
+  const corrBadge = document.getElementById('corr-badge');
+
+  function drawCorrCanvas() {
+    if (!cvCorr || panels['corr'].hidden) return;
+    const ctx = cvCorr.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const w = cvCorr.parentElement.clientWidth;
+    const h = 210;
+    cvCorr.width = w * dpr; cvCorr.height = h * dpr;
+    ctx.scale(dpr, dpr);
+    const c = getColors();
+
+    const rho = parseFloat(slCorrR.value);
+    const hasOutlier = chkOutlier.checked;
+    lblCorrR.textContent = rho.toFixed(2);
+
+    ctx.clearRect(0, 0, w, h);
+    const size = Math.min(w - 80, h - 30);
+    const startX = (w - size) / 2;
+    const startY = (h - size) / 2;
+
+    ctx.strokeStyle = c.line; ctx.strokeRect(startX, startY, size, size);
+
+    // Generate Bivariate Gaussian Points
+    const pts = [];
+    for (let i = 0; i < 45; i++) {
+      const u1 = (i * 0.173 + 0.05) % 1;
+      const u2 = (i * 0.317 + 0.1) % 1;
+      const z0 = Math.sqrt(-2 * Math.log(u1 || 0.01)) * Math.cos(2 * Math.PI * u2);
+      const z1 = Math.sqrt(-2 * Math.log(u1 || 0.01)) * Math.sin(2 * Math.PI * u2);
+      pts.push({ x: z0, y: rho * z0 + Math.sqrt(1 - rho * rho) * z1 });
+    }
+    if (hasOutlier) pts.push({ x: 3.2, y: -3.2, isOutlier: true });
+
+    pts.forEach(p => {
+      const px = startX + size / 2 + (p.x / 4) * (size / 2);
+      const py = startY + size / 2 - (p.y / 4) * (size / 2);
+      ctx.fillStyle = p.isOutlier ? c.hot : c.blue;
+      ctx.beginPath(); ctx.arc(px, py, p.isOutlier ? 6 : 3.2, 0, Math.PI * 2); ctx.fill();
+    });
+
+    const pearsonR = hasOutlier ? (rho * 0.22) : rho;
+    const spearmanR = hasOutlier ? (rho * 0.93) : rho;
+    lblPearson.textContent = pearsonR.toFixed(2);
+    lblSpearman.textContent = spearmanR.toFixed(2);
+    corrBadge.className = hasOutlier ? 'verdict-badge reject' : 'verdict-badge pass';
+    corrBadge.textContent = hasOutlier ? 'Pearson Collapsed by Outlier; Spearman Intact!' : 'Linear Co-Movement';
+  }
+  slCorrR.addEventListener('input', drawCorrCanvas);
+  chkOutlier.addEventListener('change', drawCorrCanvas);
+
+  /* ----------------- Canvas 10: Skew & Log ----------------- */
+  const cvSkew = document.getElementById('cv-skew');
+  const slSkew = document.getElementById('sl-skew');
+  const btnToggleLog = document.getElementById('btn-toggle-log');
+  const lblDistState = document.getElementById('lbl-dist-state');
+  const lblDistGap = document.getElementById('lbl-dist-gap');
+  const skewBadge = document.getElementById('skew-badge');
+  let isLogTransformed = false;
+
+  function drawSkewCanvas() {
+    if (!cvSkew || panels['fe1'].hidden) return;
+    const ctx = cvSkew.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const w = cvSkew.parentElement.clientWidth;
+    const h = 210;
+    cvSkew.width = w * dpr; cvSkew.height = h * dpr;
+    ctx.scale(dpr, dpr);
+    const c = getColors();
+    ctx.clearRect(0, 0, w, h);
+
+    const skewLevel = parseInt(slSkew.value);
+    let bars = !isLogTransformed ? (skewLevel === 1 ? [20,35,60,80,65,45,30,20,10,5] : [95,80,55,35,22,14,9,6,4,2]) : [8,18,42,75,95,80,48,22,10,4];
+
+    lblDistState.textContent = isLogTransformed ? 'After log(1+x) Transform' : 'Raw Positive Skew Data';
+    lblDistGap.textContent = isLogTransformed ? 'Mean ≈ Median' : 'Mean >> Median';
+    skewBadge.className = isLogTransformed ? 'verdict-badge pass' : 'verdict-badge reject';
+    skewBadge.textContent = isLogTransformed ? 'Normality Restored: Safe for Linear/Z Models' : 'Violates Normality: Impute via Median';
+
+    const availW = w - 70, barW = availW / bars.length - 4;
+    bars.forEach((val, i) => {
+      const bx = 35 + i * (barW + 4);
+      const bh = (val / 140) * (h - 90);
+      ctx.fillStyle = isLogTransformed ? c.accent : c.blue;
+      ctx.fillRect(bx, h - 50 - bh, barW, bh);
+    });
+
+    ctx.strokeStyle = c.line; ctx.beginPath(); ctx.moveTo(25, h - 50); ctx.lineTo(w - 25, h - 50); ctx.stroke();
+  }
+  slSkew.addEventListener('input', () => { isLogTransformed = false; drawSkewCanvas(); });
+  btnToggleLog.addEventListener('click', () => {
+    isLogTransformed = !isLogTransformed;
+    btnToggleLog.textContent = isLogTransformed ? 'Revert to Raw Skew' : 'Apply log(1+x) Transform';
+    drawSkewCanvas();
+  });
+
+  /* ----------------- Target Encoding with Smoothing ----------------- */
+  const slTeN = document.getElementById('sl-te-n');
+  const slTeCat = document.getElementById('sl-te-cat');
+  const slTeM = document.getElementById('sl-te-m');
+  const lblTeN = document.getElementById('lbl-te-n');
+  const lblTeCat = document.getElementById('lbl-te-cat');
+  const lblTeM = document.getElementById('lbl-te-m');
+  const lblTeRaw = document.getElementById('lbl-te-raw');
+  const lblTeSmooth = document.getElementById('lbl-te-smooth');
+  const teBadge = document.getElementById('te-badge');
+
+  function updateTargetEncoding() {
+    const n = parseFloat(slTeN.value);
+    const yCat = parseFloat(slTeCat.value);
+    const m = parseFloat(slTeM.value);
+    const yGlobal = 0.30;
+
+    lblTeN.textContent = n;
+    lblTeCat.textContent = yCat.toFixed(2);
+    lblTeM.textContent = m;
+
+    const rawVal = yCat;
+    const smoothVal = (n * yCat + m * yGlobal) / (n + m);
+
+    lblTeRaw.textContent = rawVal.toFixed(3);
+    lblTeSmooth.textContent = smoothVal.toFixed(3);
+
+    if (n < 5 && Math.abs(rawVal - smoothVal) > 0.25) {
+      teBadge.className = 'verdict-badge pass';
+      teBadge.textContent = 'Leakage Prevented: Pulled to Global Mean';
+    } else {
+      teBadge.className = 'verdict-badge pass';
+      teBadge.textContent = 'Reliable Sample Representation';
+    }
+  }
+  [slTeN, slTeCat, slTeM].forEach(el => el.addEventListener('input', updateTargetEncoding));
+
+  /* ----------------- Canvas 11: Scaler Comparator ----------------- */
+  const cvScaler = document.getElementById('cv-scaler');
+  function drawScalerCanvas() {
+    if (!cvScaler || panels['fe2'].hidden) return;
+    const ctx = cvScaler.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const w = cvScaler.parentElement.clientWidth;
+    const h = 220;
+    cvScaler.width = w * dpr; cvScaler.height = h * dpr;
+    ctx.scale(dpr, dpr);
+    const c = getColors();
+
+    ctx.clearRect(0, 0, w, h);
+    const raw = [10, 12, 14, 15, 18, 95];
+    const rows = [
+      { name: '1. Raw Data', vals: raw, min: 0, max: 100, color: c.muted },
+      { name: '2. MinMax Scaler [0, 1]', vals: raw.map(v => (v-10)/85), min: 0, max: 1, color: c.hot },
+      { name: '3. Standard (Z-Score)', vals: raw.map(v => (v-27.33)/30.6), min: -1.5, max: 3.5, color: c.blue },
+      { name: '4. Robust Scaler', vals: raw.map(v => (v-14.5)/5.0), min: -2.0, max: 16.5, color: c.accent }
+    ];
+
+    rows.forEach((row, i) => {
+      const y = 35 + i * 46;
+      ctx.font = '600 12px ' + getComputedStyle(document.body).getPropertyValue('--font-mono');
+      ctx.fillStyle = row.color; ctx.fillText(row.name, 30, y - 8);
+
+      ctx.strokeStyle = c.line; ctx.lineWidth = 2; ctx.beginPath();
+      ctx.moveTo(30, y); ctx.lineTo(w - 30, y); ctx.stroke();
+
+      row.vals.forEach((v, idx) => {
+        const isOutlier = idx === row.vals.length - 1;
+        const px = 30 + Math.max(0, Math.min(1, (v - row.min) / (row.max - row.min))) * (w - 60);
+        ctx.fillStyle = isOutlier ? c.hot : row.color;
+        ctx.beginPath(); ctx.arc(px, y, isOutlier ? 5.5 : 4, 0, Math.PI * 2); ctx.fill();
+      });
+    });
+  }
+
+  /* ----------------- Problem Solving Arena Interactivity ----------------- */
+  const arenaRationales = {
+    anova: {
+      correct: "Correct! You are comparing a continuous target (sales revenue) across 3 independent categories. One-Way ANOVA avoids compounding Type I false alarms.",
+      wrong: "Incorrect. Two-sample tests only compare 2 groups. Chi-Square requires categorical counts, and Correlation requires two continuous variables."
+    },
+    friedman: {
+      correct: "Correct! The algorithms are evaluated on the IDENTICAL 10 folds—these are dependent/paired measurements! Independent ANOVA violates sample independence.",
+      wrong: "Incorrect. Standard ANOVA assumes independent groups. Because the folds are identical, you must use Repeated Measures ANOVA or the non-parametric Friedman test."
+    },
+    ks: {
+      correct: "Correct! The Kolmogorov-Smirnov test compares empirical CDFs to detect any difference in shape, spread, skewness, or tails, whereas t-test only compares means.",
+      wrong: "Incorrect. Two-sample t-test only checks if means are equal. Two distributions can have the identical mean but completely different spreads or shapes."
+    },
+    zprop: {
+      correct: "Correct! You are comparing conversion proportions across two large independent groups (n = 10,000 each). 2-Sample Z Proportion Test is the industry standard.",
+      wrong: "Incorrect. ANOVA is for continuous means. Correlation is for co-movement. Proportions across 2 groups mandate a 2-sample Z-test."
+    },
+    corr: {
+      correct: "Correct! Both variables are continuous numeric. Pearson measures linear association, and Spearman measures monotonic rank association resistant to executive salary outliers.",
+      wrong: "Incorrect. Chi-Square is for categorical contingency tables. T-test and ANOVA require grouping categories."
+    },
+    chi: {
+      correct: "Correct! Both variables are categorical binary features. A 2x2 Chi-Square test of independence tests whether joint probability equals the product of marginals.",
+      wrong: "Incorrect. T-test and ANOVA require continuous numeric responses. Comparing two categorical columns mandates Chi-Square."
+    }
+  };
+
+  document.querySelectorAll('.arena-card').forEach(card => {
+    const correctVal = card.getAttribute('data-correct');
+    const opts = card.querySelectorAll('.arena-opt');
+    const fb = card.querySelector('.arena-feedback');
+    const codeBtn = card.querySelector('.arena-code-btn');
+    const codeBox = card.querySelector('.arena-code-box');
+
+    opts.forEach(btn => {
+      btn.addEventListener('click', () => {
+        opts.forEach(b => b.classList.remove('correct', 'wrong'));
+        const val = btn.getAttribute('data-val');
+        const isMatch = val === correctVal;
+
+        if (isMatch) {
+          btn.classList.add('correct');
+          fb.className = 'arena-feedback visible pass';
+          fb.innerHTML = `<strong>✓ Instructor Breakdown:</strong> ${arenaRationales[correctVal].correct}`;
+        } else {
+          btn.classList.add('wrong');
+          fb.className = 'arena-feedback visible fail';
+          fb.innerHTML = `<strong>✗ Not Quite:</strong> ${arenaRationales[correctVal].wrong}`;
+        }
+      });
+    });
+
+    if (codeBtn && codeBox) {
+      codeBtn.addEventListener('click', () => {
+        codeBox.classList.toggle('open');
+        codeBtn.textContent = codeBox.classList.contains('open') ? '▲ Hide Python Code Recipe' : '👁 View Python Code Recipe';
+      });
+    }
+  });
+
+  /* ----------------- Master Redraw Helpers ----------------- */
+  function renderActiveCanvases(activeTabId) {
+    if (activeTabId === 'basics') drawPowerCanvas();
+    if (activeTabId === 'clt') { drawCltCanvas(); drawCiCanvas(); }
+    if (activeTabId === 'z') drawZCanvas();
+    if (activeTabId === 't') drawTCanvas();
+    if (activeTabId === 'ab') updateAbTest();
+    if (activeTabId === 'chi') updateChiSquare();
+    if (activeTabId === 'anova') { drawAnovaCanvas(); drawInteractCanvas(); }
+    if (activeTabId === 'adv') drawQqCanvas();
+    if (activeTabId === 'ks') drawKsCanvas();
+    if (activeTabId === 'corr') drawCorrCanvas();
+    if (activeTabId === 'fe1') drawSkewCanvas();
+    if (activeTabId === 'fe2') { updateTargetEncoding(); drawScalerCanvas(); }
+  }
+
+  function renderAllCanvases() {
+    drawPowerCanvas(); drawCltCanvas(); drawCiCanvas(); drawZCanvas(); drawTCanvas();
+    updateAbTest(); updateChiSquare(); drawAnovaCanvas(); drawInteractCanvas();
+    drawQqCanvas(); drawKsCanvas(); drawCorrCanvas(); drawSkewCanvas();
+    updateTargetEncoding(); drawScalerCanvas();
+  }
+
+  window.addEventListener('resize', () => {
+    const activeModule = modules.find(([id]) => !panels[id].hidden);
+    if (activeModule) renderActiveCanvases(activeModule[0]);
+  });
+
+  /* ----------------- Decision Wizard Logic ----------------- */
+  const wizVar = document.getElementById('wiz-var');
+  const wizGroups = document.getElementById('wiz-groups');
+  const wizNorm = document.getElementById('wiz-norm');
+  const wizOutput = document.getElementById('wiz-output');
+  let wizState = { v: 'num', g: '1', n: 'norm' };
+
+  function updateWizard() {
+    let rec = '', rationale = '';
+    if (wizState.v === 'dist') {
+      rec = 'Two-Sample Kolmogorov-Smirnov (KS-Test)';
+      rationale = 'Compares full empirical CDF curves to detect differences in shape, spread, skewness, and tails beyond just the mean.';
+    } else if (wizState.v === 'rel') {
+      rec = wizState.n === 'norm' ? 'Pearson Correlation (r)' : 'Spearman Rank Correlation (ρ)';
+      rationale = wizState.n === 'norm' ? 'Linear relationship between continuous variables.' : 'Monotonic ranking relationship immune to skew and outliers.';
+    } else if (wizState.v === 'cat') {
+      if (wizState.g === '1') {
+        rec = 'Chi-Square (χ²) Goodness of Fit';
+        rationale = 'Evaluates observed category counts against theoretical expectations.';
+      } else if (wizState.g === '2ind') {
+        rec = '2-Sample Z Proportion Test (or Fisher Exact for small tables)';
+        rationale = 'Compares conversion rates or success proportions between two independent groups.';
+      } else {
+        rec = 'Chi-Square (χ²) Test of Independence';
+        rationale = 'Evaluates frequency cross-tabulation between two categorical features (verify Cochran condition: all E ≥ 1).';
+      }
+    } else {
+      if (wizState.g === '1') {
+        rec = wizState.n === 'norm' ? 'Z-Test (if σ known) or 1-Sample T-Test' : 'Wilcoxon Signed-Rank Test';
+        rationale = 'Compares a single sample mean/median against benchmark constant.';
+      } else if (wizState.g === '2ind') {
+        rec = wizState.n === 'norm' ? '2-Sample Welch T-Test (A/B Test)' : 'Mann-Whitney U Test (Wilcoxon Rank-Sum)';
+        rationale = 'Compares two independent cohorts without assuming equal variances.';
+      } else if (wizState.g === '2pair') {
+        rec = wizState.n === 'norm' ? 'Paired T-Test (Before vs After)' : 'Wilcoxon Signed-Rank Test';
+        rationale = 'Evaluates paired differences on the same subjects over time.';
+      } else {
+        rec = wizState.n === 'norm' ? 'One-Way ANOVA (F-Test) + Tukey HSD' : 'Kruskal-Wallis H Test';
+        rationale = 'Compares 3+ group means without compounding Type I false alarms.';
+      }
+    }
+    wizOutput.innerHTML = `
+      <div style="font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;">Recommended Test</div>
+      <div style="font-size:18px;font-weight:800;color:var(--ink);">${rec}</div>
+      <div style="font-size:13.5px;color:var(--ink-dim);">${rationale}</div>
+    `;
+  }
+
+  function setupWizButtons(container, stateKey) {
+    container.querySelectorAll('.wiz-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        container.querySelectorAll('.wiz-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        wizState[stateKey] = btn.getAttribute(`data-${stateKey}`);
+        updateWizard();
+      });
+    });
+  }
+
+  setupWizButtons(wizVar, 'v'); setupWizButtons(wizGroups, 'g'); setupWizButtons(wizNorm, 'n');
+  updateWizard();
+})();
+</script>
+</body>
+</html>
