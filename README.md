@@ -6,6 +6,7 @@
 
 <p align="center">
   <a href="https://hazardous9hub.github.io/Hypothesis-Tests/"><img src="https://img.shields.io/badge/🚀%20Live%20Demo-Launch%20HypothesisTests-0D9488?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Live Demo"></a>
+  <img src="https://img.shields.io/badge/Built%20With-Antigravity-7C3AED?style=for-the-badge&logo=google&logoColor=white" alt="Built with Antigravity">
   <img src="https://img.shields.io/badge/⚡%20Payload-28%20KB%20Gzipped-2563EB?style=for-the-badge&logo=speedtest&logoColor=white" alt="Fast Payload">
   <img src="https://img.shields.io/badge/🔒%20Privacy-Zero%20Cookies%20%7C%20No%20Trackers-059669?style=for-the-badge&logo=shield&logoColor=white" alt="Privacy">
   <img src="https://img.shields.io/badge/License-MIT-D97706?style=for-the-badge" alt="License">
@@ -21,6 +22,13 @@
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=16&duration=3000&pause=1000&color=0D9488&center=true&vCenter=true&width=620&lines=Hypothesis+Testing+%E2%80%A2+CLT+%E2%80%A2+CI+Overlap+Fallacy;A%2FB+Testing+%E2%80%A2+ANOVA+%E2%80%A2+Two-Way+Interactions;Kolmogorov-Smirnov+%E2%80%A2+Chi-Square+%E2%80%A2+Cochran+Rule;Target+Encoding+Smoothing+%E2%80%A2+Scaler+Benchmarks" alt="Animated Typing Banner" />
 </p>
+
+---
+
+> ### 💡 Author's Note & Attribution
+> This repository represents my personal learnings, lecture notes, and structured synthesis of **Hypothesis Testing, Statistical Diagnostics, and Feature Engineering** taught during the **DAV Fundamentals (Scaler DSML)** curriculum and lecture series by instructor Deekshant K.
+>
+> **Note on Web Engineering:** I did not manually write or design the website code. The entire interactive single-page application, animated Canvas simulations, Baoyu bento layouts, responsive design, and GitHub deployment were engineered with the help of **Google DeepMind Antigravity**. My primary contribution was learning the statistical foundations, analyzing real enterprise case studies (Yulu, Walmart, Aerofit), framing the diagnostic questions, and structuring this zero-jargon interactive revision companion for fellow learners! 🎓
 
 ---
 
@@ -41,6 +49,7 @@
 
 | Ecosystem | Technology | Role & Application | Animated / Visual Badge |
 | :--- | :--- | :--- | :--- |
+| **AI Pair Programmer** | **Google Antigravity** | Web application architecture, Canvas widgets & deployment | <img src="https://img.shields.io/badge/Antigravity-7C3AED?style=for-the-badge&logo=google&logoColor=white" /> |
 | **Language** | **Python** | Analytical recipes, hypothesis tests & EDA scripting | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" /> |
 | **Array Math** | **NumPy** | Vectorized simulations, sampling distributions & CLT | <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" /> |
 | **DataFrames** | **Pandas** | Contingency cross-tabulation & DataFrame manipulation | <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" /> |
@@ -159,6 +168,9 @@ You don't need Node.js, Python servers, or build tools. Simply:
 
 ---
 
-## 📜 License
+## 📜 License & Credits
 
-Distributed under the **MIT License**. Free for educational, classroom, and commercial learning use.
+Distributed under the **MIT License**.  
+* **Curriculum & Statistical Learnings:** Scaler DSML (DAV Fundamentals) • Instructor Deekshant K.  
+* **Conceptualization & Student Synthesis:** [Hazardous9hub](https://github.com/Hazardous9hub)  
+* **Interactive Web Platform & Engineering:** Built with the assistance of **Google DeepMind Antigravity**.
