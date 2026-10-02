@@ -7,6 +7,8 @@
 <p align="center">
   <a href="https://hazardous9hub.github.io/Hypothesis-Tests/"><img src="https://img.shields.io/badge/🚀%20Live%20Demo-Launch%20HypothesisTests-0D9488?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Live Demo"></a>
   <img src="https://img.shields.io/badge/Built%20With-Antigravity-7C3AED?style=for-the-badge&logo=google&logoColor=white" alt="Built with Antigravity">
+  <img src="https://komarev.com/ghpvc/?username=Hazardous9hub-Hypothesis-Tests&label=VISIT+COUNT&color=0D9488&style=for-the-badge" alt="Visit Count">
+  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fhazardous9hub.github.io%2FHypothesis-Tests&count_bg=%230D9488&title_bg=%231E293B&icon=&icon_color=%23E7E7E7&title=PAGE+VIEWS&edge_flat=false" alt="Live Page Views">
   <img src="https://img.shields.io/badge/⚡%20Payload-28%20KB%20Gzipped-2563EB?style=for-the-badge&logo=speedtest&logoColor=white" alt="Fast Payload">
   <img src="https://img.shields.io/badge/🔒%20Privacy-Zero%20Cookies%20%7C%20No%20Trackers-059669?style=for-the-badge&logo=shield&logoColor=white" alt="Privacy">
   <img src="https://img.shields.io/badge/License-MIT-D97706?style=for-the-badge" alt="License">
@@ -144,6 +146,20 @@ flowchart TD
 └── 🏃 Aerofit Treadmill Profiling
     └── KP281 ($1,500) vs KP481 ($2,500) vs KP781 ($3,500) customer income ANOVA
 ```
+
+---
+
+## 🔍 Search & Discovery Optimization (SEO & Indexing)
+
+To ensure this resource ranks at the top for learners searching for **Hypothesis Testing, Statistics, Data Analysis, and Data Science**, the project implements multi-layered search engine and repository optimization:
+
+* **Sitemap & Search Crawlers:** Full [`sitemap.xml`](sitemap.xml) and [`robots.txt`](robots.txt) configured for instant crawling by **Googlebot**, **Bingbot**, and **DuckDuckBot**.
+* **Rich Structured Data:** Embedded JSON-LD schema (`WebApplication` and `LearningResource`) to display rich cards in Google Search results.
+* **Open Graph & Twitter Cards:** Full metadata tags providing crisp preview summaries when shared on LinkedIn, WhatsApp, Discord, Slack, and Reddit.
+* **Privacy-Respecting Hit Counter:** The visit counter badges increment strictly anonymous counts. They do **not** log IP addresses, fingerprint devices, or set persistent browser cookies, fully respecting user privacy.
+
+### 🏷️ Target Search Keywords
+`hypothesis testing`, `hypothesis tests`, `data analysis`, `data science`, `statistics`, `central limit theorem`, `ab testing`, `anova`, `two way anova`, `chi square test`, `cochran condition`, `kruskal wallis`, `kolmogorov smirnov`, `feature engineering`, `target encoding`, `scaler dsml`, `python statistics`, `yulu case study`, `walmart black friday case study`, `aerofit treadmill profiling`.
 
 ---
 

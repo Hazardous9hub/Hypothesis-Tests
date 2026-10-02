@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap indexing for Google, Bing, Yahoo, DuckDuckGo
+Sitemap: https://hazardous9hub.github.io/Hypothesis-Tests/sitemap.xml
