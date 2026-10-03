@@ -1753,13 +1753,132 @@ pairwise_tukeyhsd(df['count'], df['season'])</code></pre></div>
   <!-- ==================== 1. BASICS & POWER ==================== -->
   <section class="panel" id="p-basics" hidden>
     <h2>1. Hypothesis Testing Foundations &amp; Statistical Power</h2>
-    <p class="subtitle">Alpha (&alpha;), Beta (&beta;), and the inescapable tradeoff between false alarms and detection sensitivity.</p>
+    <p class="subtitle">H&#8320; vs H&#8336;, Z-score as Signal-to-Noise ratio, P-value definition, Alpha (&alpha;), Beta (&beta;), and the inescapable tradeoff between false alarms and detection sensitivity.</p>
 
     <div class="recall-box">
-      <span class="recall-tag">Core Recall</span>
-      <span class="recall-text">Statistical Power = 1 &minus; &beta;. It is the probability of correctly detecting a real effect when one truly exists. Aim for &ge; 80% (0.80).</span>
+      <span class="recall-tag">Deekshant's Foundational Axiom</span>
+      <span class="recall-text">Statistical testing is a courtroom trial: The Null Hypothesis (H&#8320;) is presumed innocent (status quo) until overwhelming evidence rejects it. We NEVER say &quot;Accept H&#8320;&quot; &mdash; failing to reject only means insufficient evidence to convict!</span>
     </div>
 
+    <!-- Core Foundations 4-Card Blueprint -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:20px;">
+      <!-- Card 1: H0 vs Ha -->
+      <div class="card" style="border-top:4px solid var(--accent);">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span class="chip" style="font-size:12px;">Hypothesis Formulation</span>
+          <strong style="font-size:14px;color:var(--ink);">H&#8320; vs H&#8336; Framing</strong>
+        </div>
+        <p style="font-size:13px;color:var(--ink-dim);line-height:1.5;margin-bottom:10px;">
+          <strong>Null Hypothesis (H&#8320;)</strong>: Status quo, equality (<code>=</code>, <code>&le;</code>, <code>&ge;</code>). Assumes no effect, no difference, or treatment does nothing.
+        </p>
+        <p style="font-size:13px;color:var(--ink-dim);line-height:1.5;margin-bottom:10px;">
+          <strong>Alternative Hypothesis (H&#8336;)</strong>: The researcher's claim, strict inequality (<code>&ne;</code>, <code>&gt;</code>, <code>&lt;</code>). Carries the burden of proof!
+        </p>
+        <div class="code-block" style="padding:8px 12px;font-size:12px;">
+          Two-Tailed: H&#8320;: &mu; = 50 vs H&#8336;: &mu; &ne; 50<br>
+          Right-Tailed: H&#8320;: &mu; &le; 50 vs H&#8336;: &mu; &gt; 50<br>
+          Left-Tailed: H&#8320;: &mu; &ge; 50 vs H&#8336;: &mu; &lt; 50
+        </div>
+      </div>
+
+      <!-- Card 2: Z-Score & Test Statistic -->
+      <div class="card" style="border-top:4px solid var(--blue);">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span class="chip blue" style="font-size:12px;">Test Statistic</span>
+          <strong style="font-size:14px;color:var(--ink);">Z-Score as Signal-to-Noise</strong>
+        </div>
+        <div class="formula-row" style="margin-bottom:8px;">
+          <span class="formula-label">Standardized Test Statistic Z:</span>
+          <span class="formula-math">Z = (x&#772; &minus; &mu;&#8320;) / (&sigma; / &radic;n) = Signal / Noise</span>
+        </div>
+        <p style="font-size:13px;color:var(--ink-dim);line-height:1.5;margin-bottom:6px;">
+          <strong>Signal</strong>: Distance between sample mean x&#772; and hypothesized baseline &mu;&#8320;.
+        </p>
+        <p style="font-size:13px;color:var(--ink-dim);line-height:1.5;">
+          <strong>Noise (Standard Error SE)</strong>: &sigma; / &radic;n. As sample size <em>n</em> grows, SE shrinks, allowing even tiny real differences to yield a large, significant Z-score.
+        </p>
+      </div>
+
+      <!-- Card 3: P-Value Demystified -->
+      <div class="card" style="border-top:4px solid var(--purple);">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span class="chip purple" style="font-size:12px;">P-Value Truth</span>
+          <strong style="font-size:14px;color:var(--ink);">What P-Value Actually Means</strong>
+        </div>
+        <p style="font-size:13px;color:var(--ink-dim);line-height:1.5;margin-bottom:8px;">
+          <strong>Exact Definition</strong>: P-value is the probability of obtaining a test statistic at least as extreme as the observed sample, <em>given that H&#8320; is strictly true</em>.
+        </p>
+        <div class="formula-row" style="margin-bottom:8px;">
+          <span class="formula-label">Mathematical Condition:</span>
+          <span class="formula-math">P(Data as extreme | H&#8320; is True)</span>
+        </div>
+        <p style="font-size:12.5px;color:var(--hot);line-height:1.4;">
+          &#9888; <strong>Common Interview Trap</strong>: P-value is NOT P(H&#8320; is true)! It is conditioned on H&#8320; being true. If p &le; &alpha; &rarr; Reject H&#8320;; if p &gt; &alpha; &rarr; Fail to Reject H&#8320;.
+        </p>
+      </div>
+
+      <!-- Card 4: Never Say Accept H0 -->
+      <div class="card" style="border-top:4px solid var(--gold);">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span class="chip gold" style="font-size:12px;">The Golden Rule</span>
+          <strong style="font-size:14px;color:var(--ink);">Why We Never Say &quot;Accept H&#8320;&quot;</strong>
+        </div>
+        <p style="font-size:13px;color:var(--ink-dim);line-height:1.5;margin-bottom:8px;">
+          A verdict of &quot;Not Guilty&quot; does NOT mean &quot;Innocent&quot; &mdash; it simply means the prosecution failed to prove guilt beyond a reasonable doubt.
+        </p>
+        <p style="font-size:13px;color:var(--ink-dim);line-height:1.5;">
+          Failing to reject H&#8320; means the sample lacked sufficient statistical power or evidence. <em>&quot;Absence of evidence is not evidence of absence!&quot;</em>
+        </p>
+      </div>
+    </div>
+
+    <!-- 2x2 Decision Truth Matrix & Court Analogy Table -->
+    <div style="margin-bottom:20px;">
+      <h3 style="font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:8px;">
+        <span>&#9878;&#65039; The 2&times;2 Decision Truth Matrix &amp; Courtroom Analogy</span>
+      </h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:22%;">Statistical Action</th>
+              <th style="width:39%;color:var(--ink);">Reality: H&#8320; is True (Defendant is Innocent)</th>
+              <th style="width:39%;color:var(--ink);">Reality: H&#8320; is False (Defendant is Guilty)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Fail to Reject H&#8320;</strong><br><span style="font-size:12px;color:var(--muted);">(Acquit Defendant)</span></td>
+              <td>
+                <span class="chip" style="margin-bottom:4px;">&#10003; Correct Decision</span><br>
+                <strong>Confidence Level = 1 &minus; &alpha;</strong> (e.g. 95%)<br>
+                <span style="font-size:12px;color:var(--ink-dim);">Innocent person walked free.</span>
+              </td>
+              <td>
+                <span class="chip gold" style="margin-bottom:4px;">&#9888; Type II Error (&beta;)</span><br>
+                <strong>False Negative Rate (&beta;)</strong> (Missed Detection)<br>
+                <span style="font-size:12px;color:var(--ink-dim);">Guilty criminal acquitted; failed to detect a real cure/lift.</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Reject H&#8320;</strong><br><span style="font-size:12px;color:var(--muted);">(Convict Defendant)</span></td>
+              <td>
+                <span class="chip hot" style="margin-bottom:4px;">&#10060; Type I Error (&alpha;)</span><br>
+                <strong>Significance Level (&alpha;)</strong> (False Alarm)<br>
+                <span style="font-size:12px;color:var(--ink-dim);">Innocent person wrongfully convicted; ineffective feature shipped.</span>
+              </td>
+              <td>
+                <span class="chip" style="margin-bottom:4px;">&#10003; Correct Decision</span><br>
+                <strong>Statistical Power = 1 &minus; &beta;</strong> (Target &ge; 80%)<br>
+                <span style="font-size:12px;color:var(--ink-dim);">Guilty person convicted; true business lift successfully captured.</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Interactive Power & Error Simulator -->
     <div class="playground">
       <div class="playground-title">
         <span>Interactive Power &amp; Error Tradeoff Simulator</span>
@@ -2472,13 +2591,119 @@ d_stat_norm, p_val_norm = kstest(sample_data, 'norm')</code></pre></div>
   <!-- ==================== 11. FEATURE ENGINEERING 1 ==================== -->
   <section class="panel" id="p-fe1" hidden>
     <h2>11. Feature Engineering 1: Imputation &amp; Outliers (Colab Lectures 10 &amp; 12)</h2>
-    <p class="subtitle">SimpleImputer, Skewness, log(1+x), Z-score clipping, and IQR fences.</p>
+    <p class="subtitle">SimpleImputer decision rules, Skewness, Kurtosis, log(1+x), Z-score clipping, and IQR fences.</p>
 
     <div class="recall-box">
-      <span class="recall-tag">Deekshant's Loan Dataset Lesson</span>
-      <span class="recall-text">For skewed numeric fields (EMI, LoanAmount, Income): Impute via MEDIAN. For categorical fields (Gender, Married, Education): Impute via MOST_FREQUENT!</span>
+      <span class="recall-tag">Deekshant's Imputation Cardinal Rule</span>
+      <span class="recall-text">For skewed numeric fields (Income, LoanAmount, EMI): Impute via MEDIAN (outlier-immune). For symmetric normal fields: Impute via MEAN. For categorical fields (Gender, Married): Impute via MOST_FREQUENT (mode)!</span>
     </div>
 
+    <!-- SimpleImputer Strategy Matrix Table -->
+    <div style="margin-bottom:20px;">
+      <h3 style="font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:8px;">
+        <span>&#128295; SimpleImputer Strategy Decision Matrix</span>
+      </h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:20%;">Strategy</th>
+              <th style="width:25%;">Feature Distribution / Type</th>
+              <th style="width:25%;">Scikit-Learn Implementation</th>
+              <th style="width:30%;">Mathematical Rationale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="chip">median</span></td>
+              <td><strong>Skewed Numeric</strong> (e.g. Income, Fare, Loan Amount)</td>
+              <td><code>SimpleImputer(strategy='median')</code></td>
+              <td>50th percentile is mathematically immune to extreme outliers. The mean would be heavily corrupted!</td>
+            </tr>
+            <tr>
+              <td><span class="chip blue">mean</span></td>
+              <td><strong>Symmetric / Gaussian</strong> (e.g. Adult Height, Body Temp)</td>
+              <td><code>SimpleImputer(strategy='mean')</code></td>
+              <td>Optimal minimum variance unbiased estimator ONLY when data has zero extreme outliers.</td>
+            </tr>
+            <tr>
+              <td><span class="chip purple">most_frequent</span></td>
+              <td><strong>Categorical / Discrete</strong> (e.g. Gender, Education, Married)</td>
+              <td><code>SimpleImputer(strategy='most_frequent')</code></td>
+              <td>Replaces missing cells with the statistical mode (highest frequency category).</td>
+            </tr>
+            <tr>
+              <td><span class="chip gold">constant</span></td>
+              <td><strong>Informative Missingness (MNAR)</strong></td>
+              <td><code>SimpleImputer(strategy='constant', fill_value='Missing')</code></td>
+              <td>Preserves missingness as its own predictive signal when users intentionally withhold info.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Skewness, Kurtosis & Outlier Cards Grid -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:20px;">
+      <!-- Card 1: Skewness & Mean-Median-Mode -->
+      <div class="card" style="border-top:4px solid var(--accent);">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span class="chip" style="font-size:12px;">Shape Metric</span>
+          <strong style="font-size:14px;color:var(--ink);">Skewness &amp; The Inequality Rule</strong>
+        </div>
+        <p style="font-size:13px;color:var(--ink-dim);line-height:1.5;margin-bottom:8px;">
+          Measures distribution asymmetry around the center:
+        </p>
+        <ul style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;margin-left:18px;margin-bottom:10px;">
+          <li><strong>Right / Positive Skew (&gt; 0)</strong>: Long right tail. <code>Mean &gt; Median &gt; Mode</code>. (e.g. Salaries, Web Traffic).</li>
+          <li><strong>Left / Negative Skew (&lt; 0)</strong>: Long left tail. <code>Mean &lt; Median &lt; Mode</code>. (e.g. Age at Retirement).</li>
+          <li><strong>Symmetric (&approx; 0)</strong>: Bell curve. <code>Mean &approx; Median &approx; Mode</code>.</li>
+        </ul>
+        <div class="formula-row">
+          <span class="formula-label">Remedy for Positive Skew:</span>
+          <span class="formula-math">y = np.log1p(x) &equiv; ln(1 + x) &nbsp;(Handles 0s safely)</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Kurtosis -->
+      <div class="card" style="border-top:4px solid var(--blue);">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span class="chip blue" style="font-size:12px;">Tail Risk</span>
+          <strong style="font-size:14px;color:var(--ink);">Kurtosis (Tail Heaviness)</strong>
+        </div>
+        <p style="font-size:13px;color:var(--ink-dim);line-height:1.5;margin-bottom:8px;">
+          Measures propensity for extreme outlier events (tail fatness vs peak sharpness):
+        </p>
+        <ul style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;margin-left:18px;margin-bottom:10px;">
+          <li><strong>Leptokurtic (Excess &gt; 0)</strong>: Fat tails, sharp peak &rarr; Severe outlier vulnerability (stock crash risks).</li>
+          <li><strong>Mesokurtic (Excess &approx; 0)</strong>: Normal distribution tails (Kurtosis = 3).</li>
+          <li><strong>Platykurtic (Excess &lt; 0)</strong>: Thin tails, flatter peak &rarr; Few extreme outliers.</li>
+        </ul>
+      </div>
+
+      <!-- Card 3: Outlier Detection -->
+      <div class="card" style="border-top:4px solid var(--hot);">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span class="chip hot" style="font-size:12px;">Detection</span>
+          <strong style="font-size:14px;color:var(--ink);">IQR Rule vs Z-Score Rule</strong>
+        </div>
+        <p style="font-size:13px;color:var(--ink-dim);line-height:1.5;margin-bottom:8px;">
+          <strong>IQR Fences (Tukey &mdash; Robust)</strong>:
+        </p>
+        <div class="code-block" style="padding:6px 10px;font-size:11.5px;margin-bottom:8px;">
+          IQR = Q3 &minus; Q1<br>
+          Lower = Q1 &minus; 1.5 &times; IQR &nbsp;|&nbsp; Upper = Q3 + 1.5 &times; IQR
+        </div>
+        <p style="font-size:13px;color:var(--ink-dim);line-height:1.5;margin-bottom:6px;">
+          <strong>Z-Score Rule (|Z| &gt; 3)</strong>: Assumes normal distribution. Vulnerable because outliers distort &mu; and &sigma;!
+        </p>
+        <p style="font-size:12px;color:var(--muted);line-height:1.4;">
+          <strong>Treatment</strong>: Capping / Winsorizing (<code>df[col].clip(lower, upper)</code>) preserves sample size vs Trimming (deletion).
+        </p>
+      </div>
+    </div>
+
+    <!-- Interactive Skewness & log(1+x) Normalizer -->
     <div class="playground">
       <div class="playground-title">
         <span>Interactive Skewness &amp; log(1+x) Normalizer</span>
@@ -2513,14 +2738,144 @@ d_stat_norm, p_val_norm = kstest(sample_data, 'norm')</code></pre></div>
 
   <!-- ==================== 12. FEATURE ENGINEERING 2 ==================== -->
   <section class="panel" id="p-fe2" hidden>
-    <h2>12. Feature Engineering 2: Encodings &amp; Scalers (Colab Lecture 13)</h2>
-    <p class="subtitle">Target Encoding with additive smoothing &mdash; and StandardScaler vs MinMaxScaler vs RobustScaler.</p>
+    <h2>12. Feature Engineering 2: Encodings, Scalers &amp; Data Leakage (Colab Lecture 13)</h2>
+    <p class="subtitle">The Golden ML Rule (fit vs transform vs fit_transform), One-Hot vs Ordinal vs Target Encoding, and StandardScaler vs MinMaxScaler vs RobustScaler.</p>
 
     <div class="recall-box">
-      <span class="recall-tag">Deekshant's Smoothing Formula</span>
-      <span class="recall-text">Smoothed Target = (n &middot; y&#772;_cat + m &middot; y&#772;_global) / (n + m). With small sample sizes n, raw target encoding severely overfits! Smoothing pulls rare categories safely toward the global prior.</span>
+      <span class="recall-tag">Deekshant's Golden ML Rule</span>
+      <span class="recall-text">NEVER fit on test data! fit() calculates parameters (&mu;, &sigma;, min, max, median) strictly on X_train. transform() applies those learned parameters to X_train and X_test. Calling fit() or fit_transform() on X_test is DATA LEAKAGE &mdash; an immediate disqualification in interviews!</span>
     </div>
 
+    <!-- Data Leakage: fit vs transform vs fit_transform Blueprint -->
+    <div class="card" style="border-left:5px solid var(--hot);margin-bottom:20px;background:var(--surface);">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;">
+        <span class="chip hot" style="font-size:12px;">Cardinal Rule</span>
+        <strong style="font-size:15px;color:var(--hot);">&#9888; Preventing Data Leakage: fit() vs transform() vs fit_transform()</strong>
+      </div>
+      <p style="font-size:13px;color:var(--ink-dim);line-height:1.5;margin-bottom:12px;">
+        Data leakage occurs when information from outside the training dataset (such as the test set distribution) leaks into model preprocessing. It causes unrealistically optimistic test metrics and disastrous real-world production failures.
+      </p>
+      
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:14px;">
+        <div style="background:var(--code-bg);padding:12px;border-radius:var(--radius-sm);border:1px solid var(--line-subtle);">
+          <strong style="color:var(--accent);font-size:13px;display:block;margin-bottom:4px;">1. fit(X_train)</strong>
+          <span style="font-size:12px;color:var(--code-ink);line-height:1.4;display:block;">
+            <strong>Learns</strong> parameters: calculates &mu;, &sigma;, Q1, Q3, min, max, or category mappings. Stores them in object state. <em>Changes nothing in data!</em>
+          </span>
+        </div>
+        <div style="background:var(--code-bg);padding:12px;border-radius:var(--radius-sm);border:1px solid var(--line-subtle);">
+          <strong style="color:var(--blue);font-size:13px;display:block;margin-bottom:4px;">2. transform(X)</strong>
+          <span style="font-size:12px;color:var(--code-ink);line-height:1.4;display:block;">
+            <strong>Applies</strong> previously learned parameters to transform data (both X_train and X_test). Does NOT update or recalculate any parameters!
+          </span>
+        </div>
+        <div style="background:var(--code-bg);padding:12px;border-radius:var(--radius-sm);border:1px solid var(--line-subtle);">
+          <strong style="color:var(--purple);font-size:13px;display:block;margin-bottom:4px;">3. fit_transform(X_train)</strong>
+          <span style="font-size:12px;color:var(--code-ink);line-height:1.4;display:block;">
+            Convenience shortcut combining <code>fit</code> and <code>transform</code> in a single pass. <strong>Strictly for X_train only!</strong>
+          </span>
+        </div>
+      </div>
+
+      <div class="code-block" style="font-size:12.5px;">
+        <span style="color:var(--muted);"># Standard, Leakage-Free Scikit-Learn Recipe</span><br>
+        <span style="color:var(--accent);">from</span> sklearn.model_selection <span style="color:var(--accent);">import</span> train_test_split<br>
+        <span style="color:var(--accent);">from</span> sklearn.preprocessing <span style="color:var(--accent);">import</span> StandardScaler<br><br>
+        <span style="color:var(--muted);"># 1. ALWAYS split first!</span><br>
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)<br><br>
+        <span style="color:var(--muted);"># 2. fit_transform on TRAIN ONLY</span><br>
+        scaler = StandardScaler()<br>
+        X_train_scaled = scaler.fit_transform(X_train)&nbsp;&nbsp;<span style="color:var(--muted);"># Learns mu_train, sigma_train and scales X_train</span><br><br>
+        <span style="color:var(--muted);"># 3. ONLY transform on TEST (using mu_train, sigma_train!)</span><br>
+        X_test_scaled = scaler.transform(X_test)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--muted);"># NEVER CALL fit() OR fit_transform() HERE!</span>
+      </div>
+    </div>
+
+    <!-- Categorical Encodings Architecture Table -->
+    <div style="margin-bottom:20px;">
+      <h3 style="font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:8px;">
+        <span>&#127991;&#65039; Categorical Encodings Architecture &amp; Selection Matrix</span>
+      </h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:18%;">Encoding Type</th>
+              <th style="width:25%;">Feature Nature &amp; Cardinality</th>
+              <th style="width:27%;">Code Implementation</th>
+              <th style="width:30%;">Crucial Gotcha / Trap</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="chip">One-Hot Encoding</span></td>
+              <td>Nominal (no rank), <strong>Low Cardinality (&le; 5&ndash;10)</strong> (e.g. Gender, Department)</td>
+              <td><code>pd.get_dummies(df, drop_first=True)</code><br>or <code>OneHotEncoder(drop='first')</code></td>
+              <td><strong>Dummy Variable Trap</strong>: Omitting <code>drop_first=True</code> in linear models causes perfect multicollinearity (singular matrix)!</td>
+            </tr>
+            <tr>
+              <td><span class="chip blue">Ordinal Encoding</span></td>
+              <td>Categorical with <strong>Inherent Natural Order</strong> (e.g. Low &lt; Med &lt; High, Education)</td>
+              <td><code>OrdinalEncoder(categories=[['HighSchool','BS','MS','PhD']])</code></td>
+              <td>Preserves monotonic ranking. Never use on nominal data (imposes artificial distance).</td>
+            </tr>
+            <tr>
+              <td><span class="chip hot">Label Encoding</span></td>
+              <td><strong>Target Labels (y) ONLY</strong></td>
+              <td><code>from sklearn.preprocessing import LabelEncoder; le.fit_transform(y)</code></td>
+              <td><strong>NEVER use on feature matrix X!</strong> In scikit-learn, LabelEncoder is strictly built for 1D target labels.</td>
+            </tr>
+            <tr>
+              <td><span class="chip purple">Target / Mean Encoding</span></td>
+              <td>Nominal, <strong>High Cardinality (&gt; 15&ndash;1000s)</strong> (e.g. City, ZipCode, Store ID)</td>
+              <td>Smoothed Target Formula (Sandbox below)</td>
+              <td>Without additive smoothing, rare categories overfit catastrophically. Always apply m-smoothing!</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Scalers Comparison Table -->
+    <div style="margin-bottom:20px;">
+      <h3 style="font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:8px;">
+        <span>&#9878;&#65039; Feature Scalers Comparative Benchmark</span>
+      </h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:18%;">Scaler</th>
+              <th style="width:27%;">Formula &amp; Target Range</th>
+              <th style="width:27%;">Best Algorithm Fit</th>
+              <th style="width:28%;">Outlier Sensitivity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="chip">StandardScaler</span></td>
+              <td><code>Z = (x &minus; &mu;) / &sigma;</code><br>Center = 0, Std = 1 (Unbounded)</td>
+              <td>PCA, Logistic Regression, Linear Regression, SVM, Gradient Descent</td>
+              <td><span class="chip hot">High</span> &mdash; Outliers distort &mu; and &sigma;; outliers remain extreme Z-scores.</td>
+            </tr>
+            <tr>
+              <td><span class="chip blue">MinMaxScaler</span></td>
+              <td><code>X_norm = (x &minus; min) / (max &minus; min)</code><br>Bounds: [0, 1]</td>
+              <td>Neural Networks, Image Pixel values, KNN, K-Means clustering</td>
+              <td><span class="chip hot">Extreme</span> &mdash; A single massive outlier compresses all normal data points into a narrow cluster near 0!</td>
+            </tr>
+            <tr>
+              <td><span class="chip gold">RobustScaler</span></td>
+              <td><code>X_rob = (x &minus; Median) / IQR</code><br>Center = Median, Spread = IQR</td>
+              <td>Datasets with prominent outliers that cannot be removed</td>
+              <td><span class="chip">Immune</span> &mdash; Uses 50th percentile and IQR, preserving robust signal despite extreme anomalies.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Target Encoding Additive Smoothing Sandbox -->
     <div class="playground">
       <div class="playground-title">
         <span>Target Encoding Additive Smoothing Sandbox</span>
@@ -2766,6 +3121,141 @@ stats.chi2_contingency(table)</code></pre></div>
         <p style="font-size:13px;color:var(--ink-dim);">
           Checking p-values continuously and stopping the experiment early as soon as p &lt; 0.05 inflates Type I false alarm rate from 5% to over 30%! Always wait for the pre-calculated sample size.
         </p>
+      </div>
+
+      <div class="card" style="border-left:4px solid var(--hot);">
+        <h4 style="color:var(--hot);font-size:14px;margin-bottom:6px;">9. The fit() on Test Data Leakage Trap</h4>
+        <p style="font-size:13px;color:var(--ink-dim);">
+          Running <code>scaler.fit(X_test)</code> or <code>imputer.fit_transform(X_test)</code> computes test statistics, leaking future distribution into preprocessing. Always call <code>fit_transform(X_train)</code> and only <code>transform(X_test)</code>!
+        </p>
+      </div>
+
+      <div class="card" style="border-left:4px solid var(--purple);">
+        <h4 style="color:var(--purple);font-size:14px;margin-bottom:6px;">10. The P-Value Inversion Trap</h4>
+        <p style="font-size:13px;color:var(--ink-dim);">
+          If an interviewer asks: <em>&quot;Is p-value the probability that the null hypothesis is true?&quot;</em> The answer is strictly <strong>NO</strong>! It is P(Data as extreme | H&#8320; is True).
+        </p>
+      </div>
+    </div>
+
+    <!-- Deekshant Sir's Google Colabs & Notes Hub -->
+    <div style="margin-top:28px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:12px;">
+        <h3 style="font-size:16px;margin:0;display:flex;align-items:center;gap:8px;">
+          <span>&#128218; Deekshant Sir's Scaler Lecture Colabs &amp; Digital Notes Hub</span>
+        </h3>
+        <span class="chip" style="font-size:11px;">10 Direct Google Colabs + Cheatsheet</span>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:12%;">Lecture</th>
+              <th style="width:30%;">Topic &amp; Core Content</th>
+              <th style="width:38%;">Curriculum Highlights</th>
+              <th style="width:20%;text-align:right;">Access Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="chip">Summary</span></td>
+              <td><strong>Consolidated Revision Notes</strong></td>
+              <td>Full curriculum review notebook covering Z, T, Chi-sq, ANOVA &amp; Feature Engineering.</td>
+              <td style="text-align:right;">
+                <a href="https://colab.research.google.com/drive/1RlSGEKqI76EGR4HSVFt5ppAINmuQwCSZ?usp=sharing" target="_blank" rel="noopener" class="nav-btn" style="padding:4px 10px;font-size:11.5px;display:inline-flex;">Open Colab &#8599;</a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="chip gold">PDF</span></td>
+              <td><strong>DAV-3 Fundamentals Cheatsheet</strong></td>
+              <td>Formulas, critical values, decision rules, and test selection flowcharts.</td>
+              <td style="text-align:right;">
+                <a href="https://drive.google.com/file/d/1tzgM4J86Pr-TJE2Jqd2bb7Q4Wg2i0qDU/view" target="_blank" rel="noopener" class="nav-btn" style="padding:4px 10px;font-size:11.5px;display:inline-flex;">Open PDF &#8599;</a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="chip blue">L01</span></td>
+              <td><strong>Intro to Hypothesis Testing</strong></td>
+              <td>Normal Distribution, Standard Normal (Z-distribution), empirical rule (68-95-99.7).</td>
+              <td style="text-align:right;">
+                <a href="https://colab.research.google.com/drive/1JXpKGUaDHnlWLHqN5BnWzfQk4AiyQkvj?usp=sharing" target="_blank" rel="noopener" class="nav-btn" style="padding:4px 10px;font-size:11.5px;display:inline-flex;">Open Colab &#8599;</a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="chip blue">L02</span></td>
+              <td><strong>One-Sample Z-Test</strong></td>
+              <td>p-value computation with <code>norm.sf</code>/<code>cdf</code>, critical values with <code>norm.ppf</code>, Type I/II errors.</td>
+              <td style="text-align:right;">
+                <a href="https://colab.research.google.com/drive/1xs0mgJ1r1Xq82C2IkaVbqkWUabtv9b-h?usp=sharing" target="_blank" rel="noopener" class="nav-btn" style="padding:4px 10px;font-size:11.5px;display:inline-flex;">Open Colab &#8599;</a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="chip blue">L03</span></td>
+              <td><strong>Two-Sample Z-Test &amp; Proportions</strong></td>
+              <td>Two independent means, pooled proportion formula, <code>proportions_ztest</code>.</td>
+              <td style="text-align:right;">
+                <a href="https://colab.research.google.com/drive/1hnJ6wJOXuJNuScD4PRKi33XgtzSvdKNE?usp=sharing" target="_blank" rel="noopener" class="nav-btn" style="padding:4px 10px;font-size:11.5px;display:inline-flex;">Open Colab &#8599;</a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="chip">L04</span></td>
+              <td><strong>Student's T-Test</strong></td>
+              <td>One-sample, Two-sample Welch's t-test (unequal variances), Paired t-test (<code>ttest_rel</code>).</td>
+              <td style="text-align:right;">
+                <a href="https://colab.research.google.com/drive/1-FYq23L1HDa0vbHOXA4wwpF-c8gVht12?usp=sharing" target="_blank" rel="noopener" class="nav-btn" style="padding:4px 10px;font-size:11.5px;display:inline-flex;">Open Colab &#8599;</a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="chip purple">L05</span></td>
+              <td><strong>Chi-Square Test</strong></td>
+              <td>Goodness of fit, Test of Independence, <code>chi2_contingency</code>, Cochran's condition.</td>
+              <td style="text-align:right;">
+                <a href="https://colab.research.google.com/drive/1LIGoQ-VoH3ehAc39BM0bPF7yLSum7Ytc?usp=sharing" target="_blank" rel="noopener" class="nav-btn" style="padding:4px 10px;font-size:11.5px;display:inline-flex;">Open Colab &#8599;</a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="chip purple">L06</span></td>
+              <td><strong>One-Way ANOVA</strong></td>
+              <td>Comparing &ge; 3 groups, Shapiro-Wilk test, Levene's test, Kruskal-Wallis non-parametric fallback.</td>
+              <td style="text-align:right;">
+                <a href="https://colab.research.google.com/drive/1Dg1Krm5FI3rracPIvS7zmk8J2sthjNt5?usp=sharing" target="_blank" rel="noopener" class="nav-btn" style="padding:4px 10px;font-size:11.5px;display:inline-flex;">Open Colab &#8599;</a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="chip purple">L07</span></td>
+              <td><strong>Two-Way ANOVA &amp; KS-Test</strong></td>
+              <td>Interaction effects, Tukey's HSD post-hoc test, Kolmogorov-Smirnov test (<code>kstest</code>), A/B testing sample size.</td>
+              <td style="text-align:right;">
+                <a href="https://colab.research.google.com/drive/1elx2_2xAkvrIpC_9p11RDq1yYGhQZFiA?usp=sharing" target="_blank" rel="noopener" class="nav-btn" style="padding:4px 10px;font-size:11.5px;display:inline-flex;">Open Colab &#8599;</a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="chip hot">L08</span></td>
+              <td><strong>Correlation &amp; Covariance</strong></td>
+              <td>Pearson r (linear), Spearman &rho; (rank/monotonic), Anscombe's quartet, correlation heatmaps.</td>
+              <td style="text-align:right;">
+                <a href="https://colab.research.google.com/drive/1mTNu6xkr35r1KAr85y-efsU1b9YHPynR?usp=sharing" target="_blank" rel="noopener" class="nav-btn" style="padding:4px 10px;font-size:11.5px;display:inline-flex;">Open Colab &#8599;</a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="chip gold">L09</span></td>
+              <td><strong>Feature Engineering 1</strong></td>
+              <td>Skewness, Kurtosis, Outlier detection (IQR fences vs Z-score), log(1+x) normalizer.</td>
+              <td style="text-align:right;">
+                <a href="https://colab.research.google.com/drive/17xsLp8gZyIzfWo-U__JsBcBFLo0R0Gft?usp=sharing" target="_blank" rel="noopener" class="nav-btn" style="padding:4px 10px;font-size:11.5px;display:inline-flex;">Open Colab &#8599;</a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="chip gold">L10</span></td>
+              <td><strong>Feature Engineering 2 &amp; 3</strong></td>
+              <td>SimpleImputer strategies, Encodings (One-Hot, Ordinal, Target), Scalers, and Data Leakage prevention.</td>
+              <td style="text-align:right;">
+                <a href="https://colab.research.google.com/drive/14fCYNN29zUI4l0fQoEvz-jRJ2k873VFj?usp=sharing" target="_blank" rel="noopener" class="nav-btn" style="padding:4px 10px;font-size:11.5px;display:inline-flex;">Open Colab &#8599;</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
