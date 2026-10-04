@@ -1321,26 +1321,31 @@
       align-items: center;
       justify-content: center;
       min-width: max-content;
-      border-radius: 12px;
+      border-radius: 999px;
       background: #000000;
       cursor: pointer;
-      border: none;
+      border: 1.5px solid var(--line);
       outline: none;
       user-select: none;
       padding: 0;
       overflow: visible;
       font-family: var(--font-sans);
+      transition: border-color .18s ease, box-shadow .18s ease;
     }
     .creepy-btn:focus-visible {
-      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.4);
+      box-shadow: 0 0 0 3px rgba(1, 255, 112, 0.4);
+    }
+    .creepy-btn:hover {
+      border-color: #01FF70;
+      box-shadow: 0 0 12px rgba(1, 255, 112, 0.35);
     }
     .creepy-eyes {
       position: absolute;
       display: flex;
       align-items: center;
-      gap: 0.375em;
-      right: 1.25em;
-      bottom: 0.52em;
+      gap: 0.35em;
+      right: 1.15em;
+      bottom: 0.5em;
       height: 0.75em;
       z-index: 1;
       pointer-events: none;
@@ -1363,8 +1368,8 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 0.375em;
-      height: 0.375em;
+      width: 0.38em;
+      height: 0.38em;
       background: #000000;
       border-radius: 50%;
       transform: translate(-50%, -50%);
@@ -1373,36 +1378,43 @@
     .creepy-cover {
       position: absolute;
       inset: 0;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #0D9488, #059669);
-      color: #FFFFFF;
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--ink);
       font-weight: 700;
-      font-size: 12.5px;
+      font-size: 12px;
       letter-spacing: 0.02em;
-      box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.85);
+      border: 1px solid var(--line);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 9px 20px;
+      gap: 6px;
+      padding: 6px 16px;
       white-space: nowrap;
-      transform-origin: 1.25em 50%;
+      transform-origin: 1.15em 50%;
       transform: rotate(0deg);
-      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.18s ease;
       z-index: 2;
+      box-shadow: var(--shadow-sm);
+    }
+    [data-theme="dark"] .creepy-cover {
+      background: #111827;
+      color: #F8FAFC;
+      border-color: #1F293D;
     }
     .creepy-btn:hover .creepy-cover {
       transform: rotate(-13deg);
+      border-color: #01FF70;
     }
     .creepy-ghost {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 6px;
       opacity: 0;
-      padding: 9px 20px;
+      padding: 6px 16px;
       font-weight: 700;
-      font-size: 12.5px;
+      font-size: 12px;
       letter-spacing: 0.02em;
       white-space: nowrap;
       pointer-events: none;
@@ -1530,11 +1542,26 @@
       </div>
 
       <div class="header-actions">
-        <button class="pop-btn" id="headerGitBtn" type="button" aria-label="Open GitHub Repository to Star and Fork">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="flex-shrink:0;">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-          </svg>
-          <span>GitHub ⭐</span>
+        <button class="creepy-btn" id="topCreepyBtn" type="button" aria-label="Visit and Star Repository on GitHub">
+          <!-- Eyes Container -->
+          <span class="creepy-eyes" id="creepyEyes">
+            <span class="creepy-eye eye-left"><span class="creepy-pupil" id="creepyPupilL"></span></span>
+            <span class="creepy-eye eye-right"><span class="creepy-pupil" id="creepyPupilR"></span></span>
+          </span>
+          <!-- Tilting Cover with spring effect -->
+          <span class="creepy-cover">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="flex-shrink:0;">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            <span>GitHub ⭐</span>
+          </span>
+          <!-- Hidden spacer to reserve exact dimensions -->
+          <span class="creepy-ghost" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="flex-shrink:0;">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            <span>GitHub ⭐</span>
+          </span>
         </button>
         <button class="theme-toggle" id="themeBtn" aria-label="Toggle Theme">
           <span id="themeIcon">🌙</span> <span id="themeText">Dark</span>
